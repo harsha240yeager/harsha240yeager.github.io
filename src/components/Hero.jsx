@@ -126,10 +126,10 @@ export default function Hero() {
               <div className="text-[10px] font-mono uppercase tracking-widest text-white/45 mb-3">
                 research interests
               </div>
-              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-white/80">
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-white/80">
                 {profile.interests.map((it) => (
-                  <li key={it} className="flex items-start gap-2.5 leading-relaxed">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-violet-400 flex-shrink-0" />
+                  <li key={it} className="flex items-center gap-2.5 leading-snug">
+                    <span className="h-1 w-1 rounded-full bg-violet-400 flex-shrink-0" />
                     <span>{it}</span>
                   </li>
                 ))}

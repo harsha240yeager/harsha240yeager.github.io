@@ -29,12 +29,12 @@ export const profile = {
   about: `I'm an M.S. Electrical Engineering researcher at USC focused on hardware acceleration for machine-learning workloads, microarchitecture, and full-custom VLSI. My research spans RTL design and verification of pipelined processors, custom CNN/ViT accelerators on FPGA, hyperdimensional-computing datapaths, and transistor-level layout in Cadence Virtuoso. I'm an IEEE-published author (HiPC 2024) and the First Runner-Up of the DVCON India 2024 Design Contest. I enjoy taking ideas from architectural specification, through RTL and verification, all the way down to silicon.`,
   bioShort: `I research hardware accelerators for ML, microarchitecture, and full-custom VLSI — taking ideas from architectural specification, through RTL and verification, down to silicon. IEEE HiPC 2024 author and DVCON India 2024 First Runner-Up.`,
   interests: [
-    'ML accelerator microarchitecture — systolic-array CNN engines and ViT feature extractors integrated over AXI4',
-    'Pipelined RISC-V cores (RV64I + Zba) — hazard resolution, forwarding, early-branch prediction, SVA-driven verification',
-    'Full-custom datapath VLSI — Booth multipliers, 3:2/6:2 compressor trees, sparse Kogge-Stone CLAs in Cadence Virtuoso',
-    'Synthesizable RTL for emerging compute — hyperdimensional-computing pipelines with valid/ready handshakes',
-    'PPA-driven physical design — DRC/LVS/PEX, post-layout timing, RCX-aware closure',
-    'FPGA prototyping & SoC integration — Genesys 2 (Kintex-7) with RISC-V softcores',
+    'Computer Architecture & Microarchitecture',
+    'Hardware Accelerators for Machine Learning',
+    'RTL Design & Verification',
+    'Full-Custom VLSI',
+    'FPGA Prototyping & Reconfigurable Computing',
+    'Hyperdimensional & Brain-Inspired Computing',
   ],
   highlights: [
     { value: '116', suffix: ' GOP/s', label: 'CNN-accelerator throughput on Genesys-2 FPGA' },
