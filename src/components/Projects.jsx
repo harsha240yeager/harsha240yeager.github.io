@@ -1,5 +1,6 @@
+import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Trophy, Github, BookOpen, Link as LinkIcon } from 'lucide-react';
+import { ArrowUpRight, Trophy, Github, BookOpen, Link as LinkIcon, Filter } from 'lucide-react';
 import SectionHeader from './SectionHeader.jsx';
 import { projects } from '../data/portfolio.js';
 import { Diagram } from './diagrams/Diagrams.jsx';
@@ -10,16 +11,31 @@ const accents = {
   indigo: { glow: 'from-indigo-500/30 via-violet-500/20 to-transparent', text: 'text-indigo-200', chip: 'bg-indigo-500/15 border-indigo-400/30 text-indigo-200' },
 };
 
+const PRIMARY_TAGS = ['RISC-V', 'CNN', 'ViT', 'FPGA', 'Verilog', 'SystemVerilog', 'Cadence', 'Verification', 'HDC'];
+
 function linkIcon(label) {
   const l = label.toLowerCase();
   if (l.includes('github')) return Github;
-  if (l.includes('ieee') || l.includes('paper') || l.includes('publication')) return BookOpen;
+  if (l.includes('ieee') || l.includes('paper') || l.includes('publication') || l.includes('xplore')) return BookOpen;
   return LinkIcon;
 }
 
 export default function Projects() {
-  const featured = projects.find((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
+  const [active, setActive] = useState('all');
+
+  const tagSet = useMemo(() => {
+    const all = new Set();
+    projects.forEach((p) => p.tags?.forEach((t) => all.add(t)));
+    return PRIMARY_TAGS.filter((t) => all.has(t));
+  }, []);
+
+  const filtered = useMemo(() => {
+    if (active === 'all') return projects;
+    return projects.filter((p) => p.tags?.includes(active));
+  }, [active]);
+
+  const featured = filtered.find((p) => p.featured);
+  const rest = filtered.filter((p) => !p.featured);
 
   return (
     <section id="projects" className="relative py-24 sm:py-32">
@@ -30,6 +46,16 @@ export default function Projects() {
           description="Each project is annotated with an architecture diagram, key metrics, and a link to the source or publication."
         />
 
+        <div className="mt-8 flex flex-wrap items-center gap-2">
+          <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-white/45 mr-1">
+            <Filter size={11} /> filter
+          </span>
+          <FilterChip label="All" value="all" active={active} onClick={setActive} />
+          {tagSet.map((t) => (
+            <FilterChip key={t} label={t} value={t} active={active} onClick={setActive} />
+          ))}
+        </div>
+
         {featured ? <FeaturedCard project={featured} /> : null}
 
         <div className="mt-6 grid lg:grid-cols-2 gap-6">
@@ -37,8 +63,32 @@ export default function Projects() {
             <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
+
+        {filtered.length === 0 ? (
+          <div className="mt-12 glass rounded-2xl p-10 text-center text-white/55">
+            No projects match <span className="font-mono text-white/85">{active}</span> yet.
+          </div>
+        ) : null}
       </div>
     </section>
+  );
+}
+
+function FilterChip({ label, value, active, onClick }) {
+  const isActive = active === value;
+  return (
+    <button
+      type="button"
+      onClick={() => onClick(value)}
+      aria-pressed={isActive}
+      className={`text-[11px] font-mono px-3 py-1.5 rounded-full border transition ${
+        isActive
+          ? 'border-violet-400/60 bg-violet-500/20 text-violet-100'
+          : 'border-white/10 bg-white/5 text-white/65 hover:text-white hover:border-white/30'
+      }`}
+    >
+      {label}
+    </button>
   );
 }
 

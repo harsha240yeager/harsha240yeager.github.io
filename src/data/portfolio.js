@@ -21,7 +21,11 @@ export const profile = {
     github: 'https://github.com/harsha240yeager',
     email: 'mailto:hnarra@usc.edu',
     scholar: 'https://ieeexplore.ieee.org/author/10898880',
+    googleScholar: '',
+    orcid: '',
   },
+  acknowledgments:
+    'Thanks to my advisors and mentors — Prof. Gandhi Puvvada, Prof. Shahin Nazarian (USC), and Mr. Kunal Ghosh (VSD) — for shaping my path through computer architecture and full-custom VLSI.',
   about: `I'm an M.S. Electrical Engineering researcher at USC focused on hardware acceleration for machine-learning workloads, microarchitecture, and full-custom VLSI. My research spans RTL design and verification of pipelined processors, custom CNN/ViT accelerators on FPGA, hyperdimensional-computing datapaths, and transistor-level layout in Cadence Virtuoso. I'm an IEEE-published author (HiPC 2024) and the First Runner-Up of the DVCON India 2024 Design Contest. I enjoy taking ideas from architectural specification, through RTL and verification, all the way down to silicon.`,
   bioShort: `I research hardware accelerators for ML, microarchitecture, and full-custom VLSI — taking ideas from architectural specification, through RTL and verification, down to silicon. IEEE HiPC 2024 author and DVCON India 2024 First Runner-Up.`,
   interests: [
@@ -258,9 +262,7 @@ export const projects = [
       { label: 'Area', value: '2041 λ²' },
     ],
     tags: ['Cadence', 'Full-Custom', 'Booth', 'Kogge-Stone', 'DRC/LVS', 'RCX'],
-    links: [
-      { label: 'Coursework', href: 'https://linkedin.com/in/harsha240' },
-    ],
+    links: [],
   },
   {
     id: 'hdc',
@@ -326,6 +328,7 @@ export const certifications = [
     year: 'Apr 2026',
     note: 'Industry-recognized exam covering SystemVerilog RTL design and verification methodology — directly aligned with my core RTL/DV work.',
     link: 'https://linkedin.com/in/harsha240',
+    linkLabel: 'view on LinkedIn',
     featured: true,
   },
   {
@@ -340,7 +343,7 @@ export const certifications = [
     issuer: 'NPTEL',
     year: '2023',
     note: 'Foundational analog electronics — relevant to MOS-level VLSI design.',
-    link: '#',
+    link: null,
   },
   {
     name: 'Simulink Onramp',
@@ -381,6 +384,7 @@ export const achievements = [
     accent: 'violet',
     icon: 'Trophy',
     link: 'https://linkedin.com/in/harsha240',
+    linkLabel: 'View on LinkedIn',
   },
   {
     kind: 'Publication',
@@ -392,6 +396,7 @@ export const achievements = [
     accent: 'cyan',
     icon: 'BookOpen',
     link: 'https://ieeexplore.ieee.org/document/10898880',
+    linkLabel: 'Read on IEEE Xplore',
   },
   {
     kind: 'Honor',
@@ -403,5 +408,29 @@ export const achievements = [
     accent: 'violet',
     icon: 'Medal',
     link: 'https://linkedin.com/in/harsha240',
+    linkLabel: 'View on LinkedIn',
+  },
+];
+
+export const talks = [
+  {
+    title: 'Efficient Feature Extraction for ViT Model using Custom CNN Accelerator',
+    venue: 'IEEE HiPC 2024 · ROCS Workshop',
+    location: 'Bengaluru, India',
+    date: 'December 2024',
+    type: 'Conference paper presentation',
+    accent: 'cyan',
+    link: 'https://ieeexplore.ieee.org/document/10898880',
+    linkLabel: 'IEEE Xplore',
+  },
+  {
+    title: 'CNN Accelerator IP — Architecture, RTL, and FPGA Mapping',
+    venue: 'DVCON India 2024 · Design Contest',
+    location: 'Bengaluru, India',
+    date: 'September 2024',
+    type: 'Design contest pitch · 1st Runner-Up',
+    accent: 'violet',
+    link: 'https://linkedin.com/in/harsha240',
+    linkLabel: 'LinkedIn post',
   },
 ];

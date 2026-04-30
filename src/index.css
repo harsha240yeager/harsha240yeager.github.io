@@ -80,3 +80,83 @@ body {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
+
+/* Respect prefers-reduced-motion: zero out animations and transitions globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print-friendly stylesheet: portfolio prints as a clean CV-style page */
+@media print {
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  body {
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+  /* Hide chrome that doesn't belong on paper */
+  header,
+  nav[aria-label="On this page"],
+  .fixed,
+  [class*="fixed"],
+  a[href="#content"],
+  #footer,
+  footer {
+    display: none !important;
+  }
+  /* Drop the dark background and effects */
+  .glass,
+  [class*="bg-gradient"],
+  [class*="bg-bg"],
+  [class*="bg-white/"] {
+    background: #fff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-color: #d1d5db !important;
+    box-shadow: none !important;
+  }
+  /* Force readable colors for any white text utilities */
+  [class*="text-white"],
+  [class*="text-violet-"],
+  [class*="text-cyan-"],
+  [class*="text-indigo-"],
+  [class*="text-pink-"],
+  [class*="text-fuchsia-"],
+  [class*="text-lime-"] {
+    color: #111 !important;
+  }
+  .text-gradient {
+    background: none !important;
+    color: #4c1d95 !important;
+    -webkit-text-fill-color: #4c1d95 !important;
+  }
+  /* Page margins + section breaks */
+  main {
+    padding: 0 !important;
+  }
+  section {
+    page-break-inside: avoid;
+    padding: 18pt 0 !important;
+  }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #4b5563;
+  }
+}
+
+/* Subtle focus ring for keyboard users — meets WCAG 2.4.7 */
+:where(a, button, [role="button"]):focus-visible {
+  outline: 2px solid rgba(167, 139, 250, 0.85);
+  outline-offset: 3px;
+  border-radius: 6px;
+}

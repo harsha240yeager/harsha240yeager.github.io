@@ -24,12 +24,16 @@ export default function Certifications() {
           {certifications.map((c, i) => {
             const tone = tones[i % tones.length];
             const isFeatured = !!c.featured;
+            const hasLink = !!c.link && c.link.startsWith('http');
+            const Wrapper = hasLink ? motion.a : motion.div;
+            const wrapperProps = hasLink
+              ? { href: c.link, target: '_blank', rel: 'noreferrer' }
+              : {};
+
             return (
-              <motion.a
+              <Wrapper
                 key={c.name}
-                href={c.link}
-                target={c.link?.startsWith('http') ? '_blank' : undefined}
-                rel="noreferrer"
+                {...wrapperProps}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
@@ -52,25 +56,25 @@ export default function Certifications() {
                         <Sparkles size={10} /> Featured
                       </span>
                     ) : null}
-                    <span className="text-[11px] font-mono text-white/45">{c.year}</span>
+                    <span className="text-[11px] font-mono text-white/55">{c.year}</span>
                   </div>
                 </div>
 
                 <h4 className={`relative mt-4 font-display font-semibold text-white ${isFeatured ? 'text-lg sm:text-xl' : 'text-base'}`}>
                   {c.name}
                 </h4>
-                <div className="relative mt-0.5 text-xs text-white/55">{c.issuer}</div>
+                <div className="relative mt-0.5 text-xs text-white/65">{c.issuer}</div>
 
                 {c.note ? (
-                  <p className="relative mt-3 text-xs text-white/55 leading-relaxed">{c.note}</p>
+                  <p className="relative mt-3 text-xs text-white/65 leading-relaxed">{c.note}</p>
                 ) : null}
 
-                {c.link?.startsWith('http') ? (
-                  <span className="relative mt-4 inline-flex items-center gap-1 text-[11px] font-mono text-white/45 group-hover:text-white transition">
-                    show credential <ExternalLink size={11} />
+                {hasLink ? (
+                  <span className="relative mt-4 inline-flex items-center gap-1 text-[11px] font-mono text-white/55 group-hover:text-white transition">
+                    {c.linkLabel || 'show credential'} <ExternalLink size={11} />
                   </span>
                 ) : null}
-              </motion.a>
+              </Wrapper>
             );
           })}
         </div>

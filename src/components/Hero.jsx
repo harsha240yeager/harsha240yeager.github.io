@@ -1,6 +1,19 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, MapPin, Mail, Github, Linkedin, FileText, BookOpen, ExternalLink } from 'lucide-react';
+import {
+  ArrowDown,
+  MapPin,
+  Mail,
+  Github,
+  Linkedin,
+  FileText,
+  BookOpen,
+  ExternalLink,
+  GraduationCap,
+  Hash,
+  Copy,
+  Check,
+} from 'lucide-react';
 import { profile, publications } from '../data/portfolio.js';
 
 const affiliationTones = {
@@ -35,6 +48,12 @@ export default function Hero() {
                 <SidebarLink icon={Linkedin} href={profile.socials.linkedin} label="linkedin/harsha240" external />
                 <SidebarLink icon={Github} href={profile.socials.github} label="github/harsha240yeager" external />
                 <SidebarLink icon={BookOpen} href={pub?.link} label="IEEE Xplore" external />
+                {profile.socials.googleScholar ? (
+                  <SidebarLink icon={GraduationCap} href={profile.socials.googleScholar} label="Google Scholar" external />
+                ) : null}
+                {profile.socials.orcid ? (
+                  <SidebarLink icon={Hash} href={profile.socials.orcid} label="ORCID" external />
+                ) : null}
                 <SidebarLink icon={FileText} href={profile.resume} label="Curriculum Vitae (PDF)" external />
               </ul>
 
@@ -118,31 +137,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Latest paper preview — academic page convention */}
-            {pub ? (
-              <motion.a
-                href={pub.link}
-                target="_blank"
-                rel="noreferrer"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.35 }}
-                className="group mt-7 block rounded-2xl border border-cyan-400/20 bg-cyan-500/[0.04] hover:border-cyan-400/40 hover:bg-cyan-500/[0.08] p-5 transition"
-              >
-                <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-cyan-300">
-                  <BookOpen size={11} /> Latest publication
-                  <span className="ml-auto inline-flex items-center gap-1 text-white/45 group-hover:text-white transition">
-                    open <ExternalLink size={11} />
-                  </span>
-                </div>
-                <div className="mt-2 text-sm sm:text-base font-display font-semibold text-white leading-snug">
-                  {pub.title}
-                </div>
-                <div className="mt-1 text-xs text-white/55 italic">{pub.authors}</div>
-                <div className="mt-1 text-[11px] font-mono text-white/45">
-                  {pub.venue.split(',')[0]} · {pub.date} · DOI: {pub.doi}
-                </div>
-              </motion.a>
-            ) : null}
+            {pub ? <HeroPublicationCard pub={pub} /> : null}
 
             {/* Primary CTAs */}
             <motion.div
@@ -228,6 +223,62 @@ function PhotoCard() {
         <div className="text-[11px] font-mono text-white/55">USC · IIT Bhubaneswar</div>
       </div>
     </div>
+  );
+}
+
+function HeroPublicationCard({ pub }) {
+  const [copied, setCopied] = useState(false);
+
+  const onCopy = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(pub.bibtex);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      /* clipboard unavailable */
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.35 }}
+      className="group mt-7 block rounded-2xl border border-cyan-400/20 bg-cyan-500/[0.04] hover:border-cyan-400/40 hover:bg-cyan-500/[0.08] p-5 transition"
+    >
+      <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-cyan-300">
+        <BookOpen size={11} /> Latest publication
+        <a
+          href={pub.link}
+          target="_blank"
+          rel="noreferrer"
+          className="ml-auto inline-flex items-center gap-1 text-white/55 hover:text-white transition"
+        >
+          open <ExternalLink size={11} />
+        </a>
+      </div>
+      <a href={pub.link} target="_blank" rel="noreferrer" className="block">
+        <div className="mt-2 text-sm sm:text-base font-display font-semibold text-white leading-snug">
+          {pub.title}
+        </div>
+        <div className="mt-1 text-xs text-white/65 italic">{pub.authors}</div>
+        <div className="mt-1 text-[11px] font-mono text-white/55">
+          {pub.venue.split(',')[0]} · {pub.date} · DOI: {pub.doi}
+        </div>
+      </a>
+      <div className="mt-3 flex items-center gap-2">
+        <button
+          type="button"
+          onClick={onCopy}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[11px] font-mono border border-white/15 text-white/75 hover:text-white hover:border-white/30 hover:bg-white/5 transition"
+        >
+          {copied ? <Check size={12} className="text-cyan-300" /> : <Copy size={12} />}
+          {copied ? 'Copied BibTeX' : 'Cite (BibTeX)'}
+        </button>
+      </div>
+    </motion.div>
   );
 }
 

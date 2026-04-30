@@ -30,12 +30,15 @@ export default function Achievements() {
           {achievements.map((a, i) => {
             const Icon = iconMap[a.icon] || Trophy;
             const tone = accents[a.accent] || accents.violet;
+            const hasLink = !!a.link;
+            const Wrapper = hasLink ? motion.a : motion.div;
+            const wrapperProps = hasLink
+              ? { href: a.link, target: '_blank', rel: 'noreferrer' }
+              : {};
             return (
-              <motion.a
+              <Wrapper
                 key={a.title}
-                href={a.link}
-                target="_blank"
-                rel="noreferrer"
+                {...wrapperProps}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
@@ -60,23 +63,25 @@ export default function Achievements() {
                   <h3 className="mt-5 font-display text-lg font-semibold leading-snug text-white">
                     {a.title}
                   </h3>
-                  <div className="mt-1.5 text-xs font-mono text-white/45">
+                  <div className="mt-1.5 text-xs font-mono text-white/55">
                     {a.org} · {a.date}
                   </div>
 
-                  <p className="mt-4 text-sm text-white/68 leading-relaxed">
+                  <p className="mt-4 text-sm text-white/72 leading-relaxed">
                     {a.description}
                   </p>
 
-                  <span className="mt-5 inline-flex items-center gap-1 text-sm text-white/55 group-hover:text-white transition">
-                    Read more
-                    <ArrowUpRight
-                      size={14}
-                      className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"
-                    />
-                  </span>
+                  {hasLink ? (
+                    <span className="mt-5 inline-flex items-center gap-1 text-sm text-white/65 group-hover:text-white transition">
+                      {a.linkLabel || 'Read more'}
+                      <ArrowUpRight
+                        size={14}
+                        className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"
+                      />
+                    </span>
+                  ) : null}
                 </div>
-              </motion.a>
+              </Wrapper>
             );
           })}
         </div>
