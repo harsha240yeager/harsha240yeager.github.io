@@ -5,7 +5,7 @@ export const profile = {
   title: 'Graduate Researcher · VLSI & Computer Architecture',
   subtitle: 'M.S. Electrical Engineering · University of Southern California',
   tagline: 'Hardware accelerators, microarchitecture, full-custom VLSI',
-  status: 'Open to Summer 2026 internships in RTL/DV, microarchitecture & physical design',
+  status: 'Open for research collaborations in RTL/DV, microarchitecture & hardware accelerators',
   location: 'Los Angeles, California, USA',
   email: 'hnarra@usc.edu',
   resume: '/resume.pdf',

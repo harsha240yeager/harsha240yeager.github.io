@@ -34,7 +34,7 @@ export default function Contact() {
               <SectionHeader
                 kicker="get_in_touch()"
                 title={<>Let's build <span className="text-gradient">silicon</span> together.</>}
-                description="Open to summer 2026 internships and full-time roles in RTL design, microarchitecture, design verification, and physical design. Reach out — I'd love to chat."
+                description="Open for research collaborations in RTL design, microarchitecture, hardware accelerators, and design verification. Reach out — I'd love to chat."
               />
 
               <div className="mt-8 flex flex-wrap gap-3">
