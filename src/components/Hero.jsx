@@ -51,27 +51,13 @@ export default function Hero() {
 
           {/* BIO COLUMN — name, affiliations, dense bio, interests, CTAs */}
           <div className="lg:col-span-8 order-1 lg:order-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 rounded-full border border-violet-500/40 bg-violet-500/10 px-4 py-1.5 text-xs font-mono text-violet-200"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-violet-400" />
-              </span>
-              {profile.status}
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.05 }}
-              className="mt-5 font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.05] tracking-tight"
+              className="font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.05] tracking-tight text-white"
             >
-              <span className="text-white">Harshavardhan </span>
-              <span className="text-gradient">Reddy Narra</span>
+              Harshavardhan Reddy Narra
             </motion.h1>
 
             <motion.div
