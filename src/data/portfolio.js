@@ -377,11 +377,12 @@ export const certifications = [
     link: 'https://github.com/harsha240yeager/5-stage-pipelined-RISC-V-RV64I-processor',
   },
   {
-    name: 'Analog Circuits',
-    issuer: 'NPTEL',
-    year: '2023',
-    note: 'Foundational analog electronics — relevant to MOS-level VLSI design.',
-    link: null,
+    name: 'Analog Circuits (Elite)',
+    issuer: 'NPTEL · IIT Bombay',
+    year: 'Jan–Mar 2023',
+    note: 'Elite-tier certification (consolidated 75%, top performance band) from the NPTEL/IIT Bombay 8-week course on analog electronics — directly underpins my MOS-level VLSI design work.',
+    link: '/credentials/nptel-analog-circuits.png',
+    linkLabel: 'view certificate',
   },
   {
     name: 'Simulink Onramp',

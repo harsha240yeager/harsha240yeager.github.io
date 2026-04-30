@@ -24,7 +24,7 @@ export default function Certifications() {
           {certifications.map((c, i) => {
             const tone = tones[i % tones.length];
             const isFeatured = !!c.featured;
-            const hasLink = !!c.link && c.link.startsWith('http');
+            const hasLink = !!c.link && (c.link.startsWith('http') || c.link.startsWith('/'));
             const Wrapper = hasLink ? motion.a : motion.div;
             const wrapperProps = hasLink
               ? { href: c.link, target: '_blank', rel: 'noreferrer' }
