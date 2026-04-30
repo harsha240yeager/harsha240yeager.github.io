@@ -295,16 +295,34 @@ export function HDCDiagram() {
 }
 
 export function Diagram({ kind }) {
+  let inner = null;
   switch (kind) {
     case 'Pipeline':
-      return <PipelineDiagram />;
+      inner = <PipelineDiagram />;
+      break;
     case 'CNNAccelerator':
-      return <CNNAcceleratorDiagram />;
+      inner = <CNNAcceleratorDiagram />;
+      break;
     case 'MAC':
-      return <MACDiagram />;
+      inner = <MACDiagram />;
+      break;
     case 'HDC':
-      return <HDCDiagram />;
+      inner = <HDCDiagram />;
+      break;
     default:
       return null;
   }
+
+  // On narrow viewports the SVG would scale labels below readable size.
+  // We anchor a minimum native width and let the user scroll horizontally
+  // inside the card. On wider screens the SVG just fills the container.
+  return (
+    <div className="diagram-scroll relative -mx-1 overflow-x-auto">
+      <div className="min-w-[460px] px-1">{inner}</div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-bg/70 to-transparent sm:hidden"
+      />
+    </div>
+  );
 }

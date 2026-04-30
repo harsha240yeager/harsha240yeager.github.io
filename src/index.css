@@ -160,3 +160,22 @@ body {
   outline-offset: 3px;
   border-radius: 6px;
 }
+
+/* Slim, theme-matched scrollbar for the architecture-diagram horizontal-scroll containers */
+.diagram-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.diagram-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.diagram-scroll::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.35);
+  border-radius: 999px;
+}
+.diagram-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.6);
+}
+.diagram-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.35) transparent;
+}

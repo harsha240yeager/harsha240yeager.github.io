@@ -34,7 +34,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-4 order-2 lg:order-1"
+            className="lg:col-span-4 order-2 lg:order-1 max-w-xs sm:max-w-sm lg:max-w-none mx-auto lg:mx-0 w-full"
           >
             <PhotoCard />
 
