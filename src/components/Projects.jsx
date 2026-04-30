@@ -230,7 +230,7 @@ function FeaturedCard({ project: p }) {
           </div>
         </div>
 
-        <div className="lg:col-span-6 rounded-2xl border border-white/10 bg-bg/40 p-4 sm:p-5">
+        <div className="lg:col-span-6 lg:self-start rounded-2xl border border-white/10 bg-bg/40 p-4 sm:p-5">
           <div className="text-[10px] font-mono uppercase tracking-widest text-white/45 mb-1">
             architecture
           </div>
