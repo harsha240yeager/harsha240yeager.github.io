@@ -26,9 +26,9 @@ const affiliationTones = {
 export default function Hero() {
   const pub = publications[0];
   return (
-    <section id="top" className="relative pt-28 pb-16 sm:pb-20">
+    <section id="top" className="relative pt-24 sm:pt-28 pb-12 sm:pb-20">
       <div className="mx-auto max-w-7xl px-5 lg:px-10 w-full">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-start">
           {/* PHOTO COLUMN — tall portrait, academic-style */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
@@ -74,7 +74,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.05 }}
-              className="font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.05] tracking-tight text-white"
+              className="font-display font-bold text-[2rem] sm:text-5xl lg:text-[3.4rem] leading-[1.05] tracking-tight text-white break-words"
             >
               Harshavardhan Reddy Narra
             </motion.h1>

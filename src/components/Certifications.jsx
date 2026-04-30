@@ -12,7 +12,7 @@ const tones = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative py-24 sm:py-32">
+    <section id="certifications" className="relative py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <SectionHeader
           kicker="trainings.idx"

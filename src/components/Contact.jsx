@@ -17,7 +17,7 @@ const toneMap = {
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 sm:py-32">
+    <section id="contact" className="relative py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

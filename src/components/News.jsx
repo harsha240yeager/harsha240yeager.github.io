@@ -11,7 +11,7 @@ const tones = {
 
 export default function News() {
   return (
-    <section id="news" className="relative py-20 sm:py-24">
+    <section id="news" className="relative py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
