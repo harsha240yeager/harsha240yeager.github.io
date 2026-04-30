@@ -13,6 +13,7 @@ import {
   Hash,
   Copy,
   Check,
+  CalendarClock,
 } from 'lucide-react';
 import { profile, publications } from '../data/portfolio.js';
 
@@ -54,7 +55,7 @@ export default function Hero() {
                 {profile.socials.orcid ? (
                   <SidebarLink icon={Hash} href={profile.socials.orcid} label="ORCID" external />
                 ) : null}
-                <SidebarLink icon={FileText} href={profile.resume} label="Curriculum Vitae (PDF)" external />
+                <SidebarLink icon={FileText} href={profile.cvPath} label="Curriculum Vitae (PDF)" external />
               </ul>
 
               <div className="mt-5 pt-5 border-t border-white/10">
@@ -177,13 +178,31 @@ export default function Hero() {
                 Explore my research
               </a>
               <a
+                href={profile.socials.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0a66c2]/15 border border-[#0a66c2]/40 text-[#cfe2ff] font-semibold hover:bg-[#0a66c2]/25 hover:border-[#0a66c2]/60 transition"
+              >
+                <Linkedin size={15} /> Connect on LinkedIn
+              </a>
+              {profile.bookingUrl ? (
+                <a
+                  href={profile.bookingUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-cyan-400/40 bg-cyan-500/10 text-cyan-100 font-semibold hover:bg-cyan-500/15 hover:border-cyan-300/60 transition"
+                >
+                  <CalendarClock size={15} /> Book a 15-min chat
+                </a>
+              ) : null}
+              <a
                 href="#projects"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:border-white/40 hover:bg-white/5 font-medium transition"
               >
                 See projects
               </a>
               <a
-                href={profile.resume}
+                href={profile.cvPath}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:border-white/40 hover:bg-white/5 font-medium transition"

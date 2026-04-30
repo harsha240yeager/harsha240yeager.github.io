@@ -9,7 +9,20 @@ export const profile = {
   location: 'Los Angeles, California, USA',
   email: 'hnarra@usc.edu',
   resume: '/resume.pdf',
+  // Tracked CV path — clicks land on /cv.html which fires a Cloudflare
+  // pageview and then redirects to /resume.pdf. Use this anywhere a
+  // visitor-facing "download CV" button is rendered.
+  cvPath: '/cv.html',
   photo: '/profile.jpg',
+  // Public booking URL (Cal.com or Calendly). Leave '' to hide the
+  // "Book a chat" CTAs across the site. Fill in after creating an
+  // account at https://cal.com/ (free) or https://calendly.com/.
+  bookingUrl: '',
+  // Formsubmit.co endpoint. Posts the contact-form payload to your
+  // email. No account needed — the first submission triggers a one-time
+  // confirmation email; thereafter messages are delivered straight to
+  // your inbox.
+  contactFormEndpoint: 'https://formsubmit.co/hnarra@usc.edu',
   affiliations: [
     { label: 'USC · M.S. EE', tone: 'violet' },
     { label: 'IIT Bhubaneswar · Research Intern', tone: 'cyan' },

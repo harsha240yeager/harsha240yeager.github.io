@@ -59,7 +59,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href={profile.resume}
+            href={profile.cvPath}
             target="_blank"
             rel="noreferrer"
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-500 to-cyan-400 text-bg text-sm font-semibold hover:shadow-lg hover:shadow-violet-500/30 transition"
@@ -98,7 +98,7 @@ export default function Navbar() {
               ))}
               <li>
                 <a
-                  href={profile.resume}
+                  href={profile.cvPath}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-500 to-cyan-400 text-bg text-sm font-semibold"

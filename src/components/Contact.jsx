@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Download, ArrowUpRight } from 'lucide-react';
+import { Mail, Linkedin, Github, Download, ArrowUpRight, CalendarClock } from 'lucide-react';
 import SectionHeader from './SectionHeader.jsx';
+import ContactForm from './ContactForm.jsx';
 import { profile } from '../data/portfolio.js';
 
 const channels = [
@@ -44,8 +45,18 @@ export default function Contact() {
                 >
                   <Mail size={16} /> Say hello
                 </a>
+                {profile.bookingUrl ? (
+                  <a
+                    href={profile.bookingUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-cyan-500/15 border border-cyan-400/40 text-cyan-100 font-semibold hover:bg-cyan-500/20 hover:border-cyan-300/60 transition"
+                  >
+                    <CalendarClock size={16} /> Book a 15-min chat
+                  </a>
+                ) : null}
                 <a
-                  href={profile.resume}
+                  href={profile.cvPath}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:border-white/40 hover:bg-white/5 font-medium transition"
@@ -87,6 +98,30 @@ export default function Contact() {
             </div>
           </div>
         </motion.div>
+
+        <div className="mt-10 grid lg:grid-cols-12 gap-8">
+          <div className="lg:col-span-5 lg:sticky lg:top-24 lg:self-start">
+            <div className="text-[10px] font-mono uppercase tracking-widest text-cyan-300">
+              // direct_message
+            </div>
+            <h3 className="mt-2 font-display text-2xl sm:text-3xl font-bold leading-tight tracking-tight">
+              Or drop me a note here.
+            </h3>
+            <p className="mt-3 text-sm text-white/65 leading-relaxed max-w-md">
+              Prefer not to context-switch to email? Use this form. Your name,
+              affiliation, and message are delivered straight to my inbox —
+              I usually reply within a day.
+            </p>
+            <ul className="mt-5 space-y-2 text-[12px] text-white/50">
+              <li>· No newsletter, no marketing — promise.</li>
+              <li>· Honeypot-protected against bots.</li>
+              <li>· Powered by Formsubmit (no third-party tracking).</li>
+            </ul>
+          </div>
+          <div className="lg:col-span-7">
+            <ContactForm />
+          </div>
+        </div>
       </div>
     </section>
   );
