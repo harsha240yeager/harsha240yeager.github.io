@@ -6,3 +6,5 @@ dist-ssr
 *.local
 .env
 .env.local
+
+.commit-msg.txt
