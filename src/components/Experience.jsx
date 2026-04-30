@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, MapPin, Calendar } from 'lucide-react';
+import { Briefcase, MapPin, Calendar, GraduationCap } from 'lucide-react';
 import SectionHeader from './SectionHeader.jsx';
 import { experience } from '../data/portfolio.js';
 
@@ -49,6 +49,11 @@ export default function Experience() {
                         <div className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-white/55 font-mono">
                           <span className="inline-flex items-center gap-1.5"><Calendar size={13} /> {e.period}</span>
                           <span className="inline-flex items-center gap-1.5"><MapPin size={13} /> {e.location}</span>
+                          {e.advisor ? (
+                            <span className={`inline-flex items-center gap-1.5 ${a.text}`}>
+                              <GraduationCap size={13} /> Advisor: {e.advisor}
+                            </span>
+                          ) : null}
                         </div>
                       </div>
                       <div className={`h-9 w-9 grid place-items-center rounded-lg border ${a.chip}`}>

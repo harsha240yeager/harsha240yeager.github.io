@@ -25,7 +25,7 @@ export const profile = {
     orcid: '',
   },
   acknowledgments:
-    'Thanks to my advisors and mentors — Prof. Gandhi Puvvada, Prof. Shahin Nazarian (USC), and Mr. Kunal Ghosh (VSD) — for shaping my path through computer architecture and full-custom VLSI.',
+    'Thanks to my advisors and mentors — Prof. Gandhi Puvvada and Prof. Shahin Nazarian (USC), Prof. Srinivas Boppu (IIT Bhubaneswar, HDC research mentor), and Mr. Kunal Ghosh (VSD) — for shaping my path through computer architecture and full-custom VLSI.',
   about: `I'm an M.S. Electrical Engineering researcher at USC focused on hardware acceleration for machine-learning workloads, microarchitecture, and full-custom VLSI. My research spans RTL design and verification of pipelined processors, custom CNN/ViT accelerators on FPGA, hyperdimensional-computing datapaths, and transistor-level layout in Cadence Virtuoso. I'm an IEEE-published author (HiPC 2024) and the First Runner-Up of the DVCON India 2024 Design Contest. I enjoy taking ideas from architectural specification, through RTL and verification, all the way down to silicon.`,
   bioShort: `I research hardware accelerators for ML, microarchitecture, and full-custom VLSI — taking ideas from architectural specification, through RTL and verification, down to silicon. IEEE HiPC 2024 author and DVCON India 2024 First Runner-Up.`,
   interests: [
@@ -124,6 +124,7 @@ export const experience = [
     company: 'Indian Institute of Technology (IIT) Bhubaneswar',
     location: 'Odisha, India',
     period: 'Jan 2026 – Present',
+    advisor: 'Prof. Srinivas Boppu',
     accent: 'violet',
     bullets: [
       'Designing a synthesizable SystemVerilog RTL pipeline for Hyperdimensional Computing (HDC) — a 1024-bit XOR-plus-permute datapath with configurable permutation modes (word reversal, per-word rotation, full-vector rotation).',
@@ -245,6 +246,7 @@ export const projects = [
     category: 'research',
     title: '1024-bit HDC XOR-Permute Pipeline',
     period: 'IIT Bhubaneswar · Ongoing',
+    advisor: 'Advisor: Prof. Srinivas Boppu',
     accent: 'cyan',
     diagram: 'HDC',
     description:

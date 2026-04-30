@@ -178,6 +178,9 @@ function FeaturedCard({ project: p }) {
             {p.title}
           </h3>
           <div className={`mt-2 text-xs font-mono ${a.text}`}>{p.period}</div>
+          {p.advisor ? (
+            <div className="mt-1 text-[11px] font-mono text-white/55">{p.advisor}</div>
+          ) : null}
 
           <p className="mt-5 text-base text-white/72 leading-relaxed">{p.description}</p>
 
@@ -256,6 +259,11 @@ function ProjectCard({ project: p, index }) {
             <h3 className="mt-2 font-display text-xl font-semibold leading-snug">
               {p.title}
             </h3>
+            {p.advisor ? (
+              <div className="mt-1 text-[11px] font-mono text-white/55">
+                {p.advisor}
+              </div>
+            ) : null}
           </div>
         </div>
 
