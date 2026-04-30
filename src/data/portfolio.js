@@ -42,6 +42,10 @@ export const profile = {
     { value: '833', suffix: ' MHz', label: 'Full-custom 16-bit MAC clock target' },
     { value: '1024', suffix: '-bit', label: 'HDC XOR-permute datapath in SystemVerilog' },
   ],
+  researchVision: [
+    'How can hardware accelerators close the memory-bandwidth gap for transformer-class workloads at the edge — can architectural support (compression, sparsity, dataflow co-design, near-data processing) reach iso-accuracy at order-of-magnitude lower DRAM traffic?',
+    'Are brain-inspired alternatives — hyperdimensional computing and neuro-symbolic primitives — a viable energy-efficient substitute for transformer inference at constrained-compute, constrained-energy operating points, and what hardware support do they need?',
+  ],
 };
 
 export const news = [
@@ -184,14 +188,14 @@ export const education = [
 
 export const skills = [
   {
-    group: 'Architecture / Modeling',
+    group: 'Architecture',
     icon: 'Cpu',
-    items: ['Computer Architecture', 'Microarchitecture', 'Performance Modeling', 'Pipelining', 'Memory Hierarchy', 'AXI4'],
+    items: ['Computer Architecture', 'Microarchitecture', 'Pipelining', 'Memory Hierarchy', 'AXI4'],
   },
   {
-    group: 'RTL / EDA',
+    group: 'RTL & EDA',
     icon: 'CircuitBoard',
-    items: ['Verilog', 'SystemVerilog', 'RTL Design', 'Cadence Virtuoso', 'QuestaSim', 'Vivado', 'ModelSim', 'DRC/LVS/PEX'],
+    items: ['Verilog', 'SystemVerilog', 'SVA', 'Cadence Virtuoso', 'QuestaSim', 'Vivado', 'ModelSim', 'DRC/LVS/PEX'],
   },
   {
     group: 'Software',
@@ -208,6 +212,7 @@ export const skills = [
 export const projects = [
   {
     id: 'vit-cnn',
+    category: 'research',
     title: 'Custom CNN Accelerator for Vision-Transformer Feature Extraction',
     period: 'IEEE HiPC 2024 · DVCON India 2024',
     accent: 'violet',
@@ -215,7 +220,11 @@ export const projects = [
     badge: '1st Runner-Up · DVCON India 2024',
     diagram: 'CNNAccelerator',
     description:
-      'A LeNet-5–inspired CNN accelerator IP integrated with the Vega AS1061 RISC-V processor over AXI4, deployed on a Digilent Genesys 2 FPGA (Kintex-7, XC7K325T-2FFG900C). Built to accelerate the front-end feature-extraction stage of a Vision-Transformer–based malware-detection pipeline. Reduced feature-extraction latency by 2.8× over CPU baseline while preserving end-to-end ViT accuracy. Earned the First Runner-Up at DVCON India 2024 and a peer-reviewed paper at IEEE HiPC 2024 (ROCS Workshop).',
+      'A LeNet-5–inspired CNN accelerator IP integrated with the Vega AS1061 RISC-V processor over AXI4, deployed on a Digilent Genesys 2 FPGA (Kintex-7, XC7K325T-2FFG900C). Built to accelerate the front-end feature-extraction stage of a Vision-Transformer–based malware-detection pipeline. Reduced feature-extraction latency by 2.8× over the CPU baseline while preserving end-to-end ViT accuracy. Earned the First Runner-Up at DVCON India 2024 and a peer-reviewed paper at IEEE HiPC 2024 (ROCS Workshop).',
+    memoryNote:
+      'On-chip BRAM (≈18% utilization) holds activations and weights for the streamed convolution stages, removing the off-chip DRAM bottleneck on the feature-extractor critical path. AXI4 is reserved for control and bulk weight loading.',
+    methodology:
+      'Baseline: software inference of the LeNet-5 feature-extractor stage on the Vega AS1061 RISC-V softcore (compiled with -O2). Workload: feature-extraction stage of a ViT malware-detection pipeline. Measured: end-to-end stage latency on the Genesys 2 FPGA; throughput from cycle counts cross-checked with on-board profiling; power from Vivado XPower Analyzer. End-to-end ViT classification accuracy preserved versus the unaccelerated baseline.',
     metrics: [
       { label: 'Throughput', value: '116 GOP/s' },
       { label: 'Frequency', value: '200 MHz' },
@@ -229,51 +238,19 @@ export const projects = [
       { label: 'IEEE Xplore', href: 'https://ieeexplore.ieee.org/document/10898880' },
       { label: 'DOI', href: 'https://doi.org/10.1109/HiPCW63042.2024.00016' },
     ],
-  },
-  {
-    id: 'rv64i',
-    title: '5-Stage Pipelined RISC-V RV64I Processor (+ Zba)',
-    period: 'LFX Mentorship Coding Challenge',
-    accent: 'cyan',
-    diagram: 'Pipeline',
-    description:
-      'A 5-stage in-order RV64I processor in SystemVerilog with the Zba address-generation extension (SH1ADD, SH2ADD, SH3ADD). Implements full hazard resolution — data-forwarding, ID-bypass, load-use stall, and early-branch prediction with dual forwarding units (HDU_Br, FU_Br). Validated with directed and corner-case testbenches, including SVA assertions for ALU/lw/sw/beq under hazards.',
-    metrics: [
-      { label: 'ISA', value: 'RV64I + Zba' },
-      { label: 'Stages', value: '5' },
-      { label: 'Hazards', value: 'Forward + Stall' },
-      { label: 'Verif.', value: 'SVA + ModelSim' },
-    ],
-    tags: ['SystemVerilog', 'RISC-V', 'Pipelining', 'SVA', 'LFX'],
-    links: [
-      { label: 'GitHub', href: 'https://github.com/harsha240yeager/5-stage-pipelined-RISC-V-RV64I-processor' },
-    ],
-  },
-  {
-    id: 'mac',
-    title: 'Full-Custom 16-bit MAC Unit',
-    period: 'EE477 · Cadence Virtuoso · Ranked #1 in class',
-    accent: 'violet',
-    diagram: 'MAC',
-    description:
-      'A full-custom 16-bit Multiply-Accumulate unit using radix-4 Booth encoders, a 3:2 / 6:2 compressor tree, and a sparse-4 Kogge-Stone CLA. Schematic-to-layout in Cadence Virtuoso with end-to-end DRC/LVS, RCX parasitic extraction, and hierarchical post-layout timing characterization. Optimized power-distribution networks for signal integrity and PAD efficiency. Ranked #1 team in the course for design excellence.',
-    metrics: [
-      { label: 'Frequency', value: '~833 MHz' },
-      { label: 'Period', value: '1.2 ns' },
-      { label: 'Power', value: '577.3 µW' },
-      { label: 'Area', value: '2041 λ²' },
-    ],
-    tags: ['Cadence', 'Full-Custom', 'Booth', 'Kogge-Stone', 'DRC/LVS', 'RCX'],
-    links: [],
+    artifactNote: 'Source code: available on request (hnarra@usc.edu).',
   },
   {
     id: 'hdc',
+    category: 'research',
     title: '1024-bit HDC XOR-Permute Pipeline',
     period: 'IIT Bhubaneswar · Ongoing',
     accent: 'cyan',
     diagram: 'HDC',
     description:
-      'A synthesizable SystemVerilog RTL pipeline for Hyperdimensional Computing — a 1024-bit XOR-plus-permute datapath with configurable permutation modes (word reversal, per-word rotation, full-vector rotation). Parameterized as WORDS × BITS_PER_WORD with valid/ready handshake signaling, registered pipeline stages, and a self-checking testbench with golden-model verification across boundary rotations and backpressure-stall scenarios.',
+      'Open question: can hyperdimensional-computing (HDC) datapaths sustain transformer-class throughput at significantly lower energy than ML accelerators on edge classification workloads? This work builds the synthesizable RTL substrate to investigate that — a parameterized 1024-bit XOR-plus-permute pipeline (word reversal, per-word rotation, full-vector rotation) with valid/ready handshakes and registered stages, intended as the binding/permutation primitive for downstream HDC inference experiments.',
+    methodology:
+      'Verification: golden-model SystemVerilog testbench covering all permutation modes, boundary rotation values, and output-backpressure stall scenarios. Synthesis target: Vivado for FPGA prototyping; PPA characterization in progress.',
     metrics: [
       { label: 'Width', value: '1024-bit' },
       { label: 'Modes', value: '3 permutations' },
@@ -286,13 +263,56 @@ export const projects = [
     ],
   },
   {
+    id: 'mac',
+    category: 'coursework',
+    title: 'Full-Custom 16-bit MAC Unit',
+    period: 'EE477 (USC) · Cadence Virtuoso · Ranked #1 in class',
+    accent: 'violet',
+    diagram: 'MAC',
+    description:
+      'A full-custom 16-bit Multiply-Accumulate unit using radix-4 Booth encoders, a 3:2 / 6:2 compressor tree, and a sparse-4 Kogge-Stone CLA. Schematic-to-layout in Cadence Virtuoso with end-to-end DRC/LVS, RCX parasitic extraction, and hierarchical post-layout timing characterization. Optimized power-distribution networks for signal integrity and PAD efficiency. Ranked #1 team in the course cohort.',
+    methodology:
+      'Schematic capture → custom layout in Cadence Virtuoso, DRC/LVS clean, RCX parasitic extraction. Frequency, period, power, and area characterized post-extraction at the design corner. Course-project; PDK and corners per EE477 lab spec.',
+    metrics: [
+      { label: 'Frequency', value: '~833 MHz' },
+      { label: 'Period', value: '1.2 ns' },
+      { label: 'Power', value: '577.3 µW' },
+      { label: 'Area', value: '2041 λ²' },
+    ],
+    tags: ['Cadence', 'Full-Custom', 'Booth', 'Kogge-Stone', 'DRC/LVS', 'RCX'],
+    links: [],
+  },
+  {
+    id: 'rv64i',
+    category: 'coursework',
+    title: '5-Stage Pipelined RISC-V RV64I Processor (+ Zba)',
+    period: 'LFX Mentorship Coding Challenge',
+    accent: 'cyan',
+    diagram: 'Pipeline',
+    description:
+      'A 5-stage in-order RV64I processor in SystemVerilog with the Zba address-generation extension (SH1ADD, SH2ADD, SH3ADD). Implements full hazard resolution — data-forwarding, ID-bypass, load-use stall, and early-branch prediction with dual forwarding units (HDU_Br, FU_Br). Validated with directed and corner-case testbenches, including SVA assertions for ALU/lw/sw/beq under hazards.',
+    methodology:
+      'Verification: directed and corner-case testbenches with SystemVerilog Assertions covering ALU, load/store, and branch behavior under all hazard conditions. Simulation in ModelSim. Open-source coding-challenge submission.',
+    metrics: [
+      { label: 'ISA', value: 'RV64I + Zba' },
+      { label: 'Stages', value: '5' },
+      { label: 'Hazards', value: 'Forward + Stall' },
+      { label: 'Verif.', value: 'SVA + ModelSim' },
+    ],
+    tags: ['SystemVerilog', 'RISC-V', 'Pipelining', 'SVA', 'LFX'],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/harsha240yeager/5-stage-pipelined-RISC-V-RV64I-processor' },
+    ],
+  },
+  {
     id: 'cnn-systolic',
+    category: 'coursework',
     title: '5×6 Systolic-Array CNN Accelerator (LeNet-5)',
-    period: 'Verilog · Genesys 2 FPGA',
+    period: 'Underlying engine for the ViT paper',
     accent: 'violet',
     diagram: 'CNNAccelerator',
     description:
-      'Underlying systolic-array engine for the ViT feature-extractor — a 5×6 PE-array implementing convolution, pooling, and activation in Verilog, integrated over AXI4 with the Vega AS1061 RISC-V softcore on Genesys 2 FPGA (Kintex-7).',
+      'The underlying systolic-array engine that powered the ViT feature-extractor IP — a 5×6 PE array implementing convolution, pooling, and activation in Verilog, integrated over AXI4 with the Vega AS1061 RISC-V softcore on a Genesys 2 FPGA (Kintex-7). Listed separately for completeness; the research narrative is in the flagship project above.',
     metrics: [
       { label: 'PE array', value: '5 × 6' },
       { label: 'Throughput', value: '116 GOP/s' },
@@ -305,6 +325,7 @@ export const projects = [
   },
   {
     id: 'vsd',
+    category: 'coursework',
     title: 'VSDSquadron Mini — RISC-V Tape-Out Flow',
     period: 'VSD Internship · CH32V003F4U6 (RV32EC)',
     accent: 'cyan',
@@ -372,6 +393,7 @@ export const publications = [
   year      = {2024},
   doi       = {10.1109/HiPCW63042.2024.00016},
 }`,
+    artifactNote: 'Source code available on request (hnarra@usc.edu).',
   },
 ];
 

@@ -136,6 +136,30 @@ export default function Hero() {
               </ul>
             </motion.div>
 
+            {/* Research vision — the open questions you want to spend the next 5 years on */}
+            {profile.researchVision?.length ? (
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.33 }}
+                className="mt-7 rounded-2xl border border-violet-400/20 bg-violet-500/[0.04] p-5"
+              >
+                <div className="text-[10px] font-mono uppercase tracking-widest text-violet-300 mb-3">
+                  research vision · open questions
+                </div>
+                <ol className="space-y-3 text-sm text-white/78 leading-relaxed">
+                  {profile.researchVision.map((q, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="font-mono text-xs text-violet-300/80 flex-shrink-0 mt-0.5">
+                        Q{i + 1}.
+                      </span>
+                      <span className="italic">{q}</span>
+                    </li>
+                  ))}
+                </ol>
+              </motion.div>
+            ) : null}
+
             {/* Latest paper preview — academic page convention */}
             {pub ? <HeroPublicationCard pub={pub} /> : null}
 

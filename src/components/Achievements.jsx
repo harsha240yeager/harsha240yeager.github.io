@@ -151,6 +151,12 @@ function PublicationCard({ pub }) {
               {copied ? 'Copied' : 'Copy BibTeX'}
             </button>
           </div>
+
+          {pub.artifactNote ? (
+            <div className="mt-4 text-[11px] font-mono text-white/55 italic">
+              {pub.artifactNote}
+            </div>
+          ) : null}
         </div>
 
         <div className="lg:col-span-5">
