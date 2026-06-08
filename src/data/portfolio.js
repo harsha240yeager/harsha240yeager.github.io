@@ -63,6 +63,12 @@ export const profile = {
 
 export const news = [
   {
+    date: 'May 2026',
+    type: 'New',
+    text: 'Completed Cadence Essential SystemVerilog for UVM — Universal Verification Methodology, sequence-driven testbenches, and coverage-driven verification.',
+    accent: 'violet',
+  },
+  {
     date: 'Apr 2026',
     type: 'New',
     text: 'Earned the Cadence SystemVerilog for Design and Verification (v25.03) certification.',
@@ -209,12 +215,12 @@ export const skills = [
   {
     group: 'RTL & EDA',
     icon: 'CircuitBoard',
-    items: ['Verilog', 'SystemVerilog', 'SVA', 'Cadence Virtuoso', 'QuestaSim', 'Vivado', 'ModelSim', 'DRC/LVS/PEX'],
+    items: ['Verilog', 'SystemVerilog', 'SVA', 'UVM', 'Cadence Virtuoso', 'QuestaSim', 'Vivado', 'ModelSim', 'DRC/LVS/PEX'],
   },
   {
     group: 'Software',
     icon: 'Code2',
-    items: ['C++', 'Python', 'TCL', 'Linux', 'Git', 'Bash'],
+    items: ['C++', 'Python', 'MATLAB', 'TCL', 'Linux', 'Git', 'Bash'],
   },
   {
     group: 'Hardware Platforms',
@@ -364,10 +370,17 @@ export const certifications = [
     name: 'SystemVerilog for Design and Verification (v25.03)',
     issuer: 'Cadence',
     year: 'Apr 2026',
-    note: 'Industry-recognized exam covering SystemVerilog RTL design and verification methodology — directly aligned with my core RTL/DV work.',
-    link: 'https://linkedin.com/in/harsha240',
-    linkLabel: 'view on LinkedIn',
+    note: 'Industry-recognized Cadence exam covering SystemVerilog RTL design and verification methodology — directly aligned with my core RTL/DV work.',
+    link: 'https://www.credly.com/badges/ca72d8e8-ae25-4b64-85f1-7ef5c7532ec2/linked_in_profile',
+    linkLabel: 'verify on Credly',
     featured: true,
+  },
+  {
+    name: 'Essential SystemVerilog for UVM',
+    issuer: 'Cadence System Design and Analysis',
+    year: 'May 2026',
+    note: 'Cadence training on the Universal Verification Methodology — class library, sequence-driven testbench architecture, scoreboards, and coverage-driven verification.',
+    link: null,
   },
   {
     name: 'LFX Mentorship Coding Challenge — RISC-V',
@@ -385,11 +398,18 @@ export const certifications = [
     linkLabel: 'view certificate',
   },
   {
-    name: 'Simulink Onramp',
+    name: 'MATLAB Onramp',
+    issuer: 'MathWorks',
+    year: 'Jun 2023',
+    note: 'MATLAB programming and computation fundamentals used for hardware modeling and signal processing.',
+    link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=f8c9a0f1-314f-44de-b478-b73048e61a47',
+  },
+  {
+    name: 'MATLAB App Designer Onramp',
     issuer: 'MathWorks',
     year: '2023',
-    note: 'Model-based design fundamentals used for hardware modeling.',
-    link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=bcc122bd-179d-4a5c-9174-8b39fe5f4907',
+    note: 'MATLAB App Designer fundamentals — GUI design for algorithm and hardware-result visualization.',
+    link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=4d0b56ca-fa08-40f0-8c1c-d3a2691bf3f8',
   },
 ];
 
