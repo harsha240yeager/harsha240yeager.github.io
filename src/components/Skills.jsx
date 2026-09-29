@@ -5,9 +5,11 @@ export default function Skills() {
     <section id="skills" className="section shell">
       <div className="section-heading compact-heading">
         <div>
-          <span className="eyebrow section-index">05 / THE TOOLKIT</span>
+          <span className="eyebrow section-index">
+            06 / SKILLS & CERTIFICATIONS
+          </span>
           <h2>
-            Across the <span className="serif-accent">stack.</span>
+            Technical <span className="serif-accent">toolkit.</span>
           </h2>
         </div>
         <p>From a Python model to a physical layout.</p>

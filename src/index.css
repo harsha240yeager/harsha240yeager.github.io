@@ -517,6 +517,104 @@ h4 {
   max-width: 330px;
   padding-bottom: 4px;
 }
+.interests-section {
+  padding-top: 98px;
+}
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.interest-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 285px;
+  padding: 28px 30px;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.interest-card:first-child {
+  color: var(--paper);
+  border-color: var(--green);
+  background: var(--green);
+}
+.interest-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.interest-icon {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  border: 1px solid #d3dacb;
+  background: var(--sage);
+  color: var(--green);
+}
+.interest-card:first-child .interest-icon {
+  color: #dceabe;
+  border-color: #637b60;
+  background: #344c3b;
+}
+.interest-number {
+  color: #838e7d;
+  font-size: 8px;
+}
+.interest-card:first-child .interest-number {
+  color: #b0c2a6;
+}
+.interest-card h3 {
+  max-width: 440px;
+  margin-top: 22px;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.65px;
+}
+.interest-card > p {
+  max-width: 460px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.interest-card:first-child > p {
+  color: #d0dccc;
+}
+.interest-themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: auto 0 0;
+  padding: 22px 0 0;
+  list-style: none;
+}
+.interest-themes li {
+  padding: 5px 8px;
+  border: 1px solid #dce1d2;
+  color: #5e6e5c;
+  font: 8px/1.4 var(--mono);
+}
+.interest-card:first-child .interest-themes li {
+  color: #d4e0c4;
+  border-color: #61775d;
+}
+.interests-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 25px;
+  padding-top: 21px;
+  border-top: 1px solid var(--line);
+}
+.interests-bottom p {
+  color: var(--muted);
+  font-size: 11px;
+}
+.interests-bottom .text-link {
+  font-size: 11px;
+}
 .project-toolbar {
   display: flex;
   justify-content: space-between;
@@ -677,6 +775,8 @@ h4 {
   font-size: 10px;
 }
 .project-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--line);
   background: var(--white);
   transition: border-color 0.2s;
@@ -747,6 +847,9 @@ h4 {
   border: 1px solid #d1d6c6;
 }
 .project-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   padding: 26px 28px 20px;
 }
 .project-kind {
@@ -768,7 +871,8 @@ h4 {
   color: var(--accent);
 }
 .project-card p {
-  font-size: 12px;
+  flex-grow: 1;
+  font-size: 13px;
   color: var(--muted);
   line-height: 1.85;
   margin-top: 13px;
@@ -1528,6 +1632,12 @@ summary {
   }
 }
 @media (max-width: 900px) {
+  .interest-card {
+    padding: 24px;
+  }
+  .interest-card h3 {
+    font-size: 19px;
+  }
   .shell {
     width: calc(100% - 48px);
   }
@@ -1717,6 +1827,33 @@ summary {
   }
 }
 @media (max-width: 640px) {
+  .interests-section {
+    padding-top: 62px;
+  }
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+  .interest-card {
+    min-height: 0;
+    padding: 23px;
+  }
+  .interest-card h3 {
+    max-width: none;
+    font-size: 20px;
+    margin-top: 19px;
+  }
+  .interest-card > p {
+    font-size: 13px;
+  }
+  .interest-themes {
+    margin-top: 0;
+  }
+  .interests-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
   html {
     scroll-padding-top: 88px;
   }
@@ -2248,8 +2385,15 @@ summary {
   }
 }
 @media (max-width: 370px) {
-  .hero-actions .button { padding-inline: 14px; gap: 12px; font-size: 10px; }
-  .hero-actions .text-link { gap: 8px; font-size: 10px; }
+  .hero-actions .button {
+    padding-inline: 14px;
+    gap: 12px;
+    font-size: 10px;
+  }
+  .hero-actions .text-link {
+    gap: 8px;
+    font-size: 10px;
+  }
   .shell {
     width: calc(100% - 32px);
   }
@@ -2302,6 +2446,19 @@ summary {
   }
 }
 @media print {
+  .interest-card {
+    min-height: 0;
+    padding: 14px;
+    break-inside: avoid;
+  }
+  .interest-card:first-child {
+    color: black;
+    background: #f0f0ed;
+    border-color: #aaa;
+  }
+  .interest-card:first-child > p {
+    color: #444;
+  }
   html,
   body {
     background: white;

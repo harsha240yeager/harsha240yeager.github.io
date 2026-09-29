@@ -24,14 +24,14 @@ export default function Hero() {
             <span className="intro-rule" />
             <p>
               I’m <strong>Harshavardhan Reddy Narra.</strong>
-              <br />I build efficient hardware for intelligent systems—
-              <br className="wide-only" /> from the architecture to the last
-              bit.
+              <br />I design efficient architectures and AI accelerators,
+              <br className="wide-only" /> connecting algorithms, memory, and
+              hardware.
             </p>
           </div>
           <div className="hero-actions">
-            <a href="#projects" className="button button-dark">
-              Explore my work <ArrowDown size={17} />
+            <a href="#research" className="button button-dark">
+              My research <ArrowDown size={17} />
             </a>
             <a
               href={profile.cvPath}
@@ -58,7 +58,7 @@ export default function Hero() {
           <span className="status-dot" />
           {profile.status}
         </span>
-        <a href="#projects">
+        <a href="#research">
           SCROLL TO EXPLORE <ArrowDown size={12} />
         </a>
         <span className="mono">PORTFOLIO / 2026</span>

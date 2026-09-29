@@ -2,17 +2,17 @@ import { ArrowUpRight, BookOpen, Award } from "lucide-react";
 import { publications, recognition } from "../data/portfolio.js";
 export default function Research() {
   return (
-    <section id="research" className="research-section">
+    <section id="publications" className="research-section">
       <div className="shell section">
         <div className="section-heading">
           <div>
             <span className="eyebrow section-index">
-              02 / RESEARCH & RECOGNITION
+              03 / PUBLICATIONS & RECOGNITION
             </span>
             <h2>
-              Work that goes
+              Published work.
               <br />
-              <span className="serif-accent">beyond the bench.</span>
+              <span className="serif-accent">Recognized ideas.</span>
             </h2>
           </div>
           <p>

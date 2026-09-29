@@ -1,4 +1,4 @@
-// Updated from Harsha_Resume.pdf, September 2026. Metrics retain their workload context.
+// Resume-based results retain their workload context. Research interests supplied by Harsha.
 export const profile = {
   name: "Harshavardhan Reddy Narra",
   shortName: "Harsha",
@@ -21,6 +21,44 @@ export const profile = {
   philosophy:
     "I like working across the boundaries: understanding the algorithm, shaping the architecture, writing the RTL, and seeing it run on real hardware. The most interesting part is finding out where an elegant idea meets a practical constraint.",
 };
+export const researchInterests = [
+  {
+    id: "efficient-architecture",
+    number: "01",
+    icon: "architecture",
+    title: "Energy-Efficient Computer Architecture and AI Accelerators",
+    description:
+      "Designing computing architectures that improve the performance and energy efficiency of AI inference.",
+    themes: ["AI inference", "Energy efficiency", "Architecture"],
+  },
+  {
+    id: "memory-dataflow",
+    number: "02",
+    icon: "memory",
+    title: "Memory Systems and Dataflow Optimization",
+    description:
+      "Exploring memory hierarchies, data reuse, and scheduling techniques to reduce data movement and execution costs.",
+    themes: ["Memory hierarchy", "Data reuse", "Scheduling"],
+  },
+  {
+    id: "hardware-software",
+    number: "03",
+    icon: "codesign",
+    title: "Hardware–Software Co-Design and FPGA Acceleration",
+    description:
+      "Optimizing algorithms and hardware together, using FPGA prototypes to implement and evaluate architectural ideas.",
+    themes: ["Co-design", "FPGA prototyping", "Evaluation"],
+  },
+  {
+    id: "embedded-ai",
+    number: "04",
+    icon: "robotics",
+    title: "Embedded AI for Robotics and Autonomous Systems",
+    description:
+      "Exploring how efficient onboard computing can support perception and intelligent behavior under memory, power, and timing constraints.",
+    themes: ["Onboard computing", "Perception", "Real-time constraints"],
+  },
+];
 export const projects = [
   {
     id: "hdc",

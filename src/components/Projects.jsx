@@ -14,16 +14,15 @@ export default function Projects() {
     <section id="projects" className="section shell">
       <div className="section-heading">
         <div>
-          <span className="eyebrow section-index">01 / SELECTED WORK</span>
+          <span className="eyebrow section-index">02 / SELECTED PROJECTS</span>
           <h2>
-            Built to make
-            <br />a <span className="serif-accent">difference.</span>
+            Selected <span className="serif-accent">work.</span>
           </h2>
         </div>
         <p>
-          Ideas are a starting point.
+          Architecture, implementation, and measured results.
           <br />
-          Here’s what happens when they meet hardware.
+          Explore each project for the technical details.
         </p>
       </div>
       <div className="project-toolbar">

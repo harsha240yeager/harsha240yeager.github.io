@@ -1,6 +1,6 @@
 # Harsha Narra — Hardware & Computer Architecture
 
-A responsive React portfolio for Harshavardhan Reddy Narra, with an interactive processor illustration, six technical case studies, research, experience, education, and contact links.
+A responsive React portfolio for Harshavardhan Reddy Narra, with an interactive processor illustration, four research interests, six technical case studies, publications, experience, education, and contact links.
 
 ## Development
 
@@ -13,7 +13,7 @@ Requires Node.js 20 or newer.
 
 ## Content
 
-Edit `src/data/portfolio.js` for profile information, project results and methodology, employment, education, publications, and certifications. Results were updated from the September 2026 resume. Keep measurement context with performance claims.
+Edit `src/data/portfolio.js` for profile information, research interests, project results and methodology, employment, education, publications, and certifications. The four research interests were supplied by Harsha; project results were updated from the September 2026 resume. Keep measurement context with performance claims.
 
 Replace `public/resume.pdf` when updating the resume. All résumé links use `/cv.html`, which preserves the existing Cloudflare pageview tracking and redirects to the PDF. Contact uses direct email links and an email-copy button.
 

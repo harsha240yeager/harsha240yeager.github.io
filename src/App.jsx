@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
+import ResearchInterests from "./components/ResearchInterests.jsx";
 import Projects from "./components/Projects.jsx";
 import Research from "./components/Research.jsx";
 import Experience from "./components/Experience.jsx";
@@ -14,6 +15,7 @@ export default function App() {
       <Navbar />
       <main id="content">
         <Hero />
+        <ResearchInterests />
         <Projects />
         <Research />
         <Experience />

@@ -21,7 +21,7 @@ export default function Contact() {
     <section id="contact" className="contact-section">
       <div className="shell contact-inner">
         <div className="contact-top">
-          <span className="eyebrow">06 / WHAT’S NEXT?</span>
+          <span className="eyebrow">07 / GET IN TOUCH</span>
           <span className="availability">
             <span className="status-dot" />
             {profile.status}

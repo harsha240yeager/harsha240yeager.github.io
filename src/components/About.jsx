@@ -22,15 +22,13 @@ export default function About() {
               <MapPin size={13} />
               Los Angeles, California
             </span>
-            <span className="mono">34.05° N / 118.24° W</span>
+            <span className="mono">USC / LOS ANGELES</span>
           </div>
         </div>
         <div className="about-copy">
-          <span className="eyebrow section-index">04 / A LITTLE ABOUT ME</span>
+          <span className="eyebrow section-index">05 / ABOUT & EDUCATION</span>
           <h2>
-            Curious by nature.
-            <br />
-            <span className="serif-accent">Engineer by practice.</span>
+            A little about <span className="serif-accent">me.</span>
           </h2>
           <p className="about-lead">{profile.about}</p>
           <p>{profile.philosophy}</p>

@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { profile } from "../data/portfolio.js";
 const links = [
-  ["projects", "Work"],
   ["research", "Research"],
+  ["projects", "Projects"],
+  ["publications", "Publications"],
   ["experience", "Experience"],
   ["about", "About"],
 ];

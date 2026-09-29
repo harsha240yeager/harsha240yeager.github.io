@@ -4,11 +4,11 @@ export default function Experience() {
     <section id="experience" className="shell section experience-section">
       <div className="section-heading">
         <div>
-          <span className="eyebrow section-index">03 / THE JOURNEY</span>
+          <span className="eyebrow section-index">04 / EXPERIENCE</span>
           <h2>
-            Learning by
+            Research, teaching
             <br />
-            <span className="serif-accent">building.</span>
+            <span className="serif-accent">& engineering.</span>
           </h2>
         </div>
         <p>
