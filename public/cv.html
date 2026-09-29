@@ -2,76 +2,62 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Downloading CV — Harshavardhan Reddy Narra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Résumé — Harsha Narra</title>
     <meta name="robots" content="noindex" />
-
-    <!-- Fire the Cloudflare Web Analytics beacon so this CV-download
-         intent shows up as a /cv pageview in the dashboard. -->
+    <link rel="icon" href="/favicon.svg" />
+    <meta http-equiv="refresh" content="1; url=/resume.pdf" />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #f7f5ef;
+        color: #242a25;
+        font:
+          15px/1.7 system-ui,
+          sans-serif;
+      }
+      .card {
+        max-width: 430px;
+        margin: 24px;
+        padding: 40px;
+        border: 1px solid #dcded3;
+      }
+      small {
+        font: 10px monospace;
+        letter-spacing: 2px;
+        color: #b84e2c;
+      }
+      h1 {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.2;
+      }
+      p {
+        color: #697067;
+      }
+      a {
+        color: #b84e2c;
+      }
+    </style>
     <script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "9b8c18f4517343b9b961b50f01751315"}'
+      data-cf-beacon='{"token":"9b8c18f4517343b9b961b50f01751315"}'
     ></script>
-
-    <!-- Hard fallback in case JS is disabled. -->
-    <meta http-equiv="refresh" content="1; url=/resume.pdf" />
-
-    <style>
-      :root { color-scheme: dark; }
-      html, body {
-        margin: 0; padding: 0; height: 100%;
-        background: #0a0a13; color: #fff;
-        font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      }
-      body { display: grid; place-items: center; }
-      .card {
-        max-width: 480px;
-        padding: 32px 36px;
-        border: 1px solid rgba(139, 92, 246, 0.18);
-        border-radius: 20px;
-        background: rgba(19, 19, 42, 0.55);
-        backdrop-filter: blur(14px);
-        text-align: center;
-      }
-      .kicker {
-        font-family: 'JetBrains Mono', ui-monospace, monospace;
-        font-size: 11px;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: rgba(167, 139, 250, 0.95);
-      }
-      h1 {
-        margin: 8px 0 14px;
-        font-weight: 700;
-        font-size: 24px;
-        background-image: linear-gradient(90deg, #a78bfa, #818cf8, #67e8f9);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      p { color: rgba(255, 255, 255, 0.7); line-height: 1.6; font-size: 14px; }
-      a { color: #a78bfa; }
-    </style>
   </head>
   <body>
-    <div class="card">
-      <div class="kicker">// downloading_cv</div>
-      <h1>Your CV is loading…</h1>
-      <p>
-        If the download doesn't start automatically, click
-        <a href="/resume.pdf">here</a>.
-      </p>
-    </div>
-
+    <main class="card">
+      <small>HARSHA NARRA / RÉSUMÉ</small>
+      <h1>The full story, on one page.</h1>
+      <p>Opening the latest résumé.</p>
+      <a href="/resume.pdf">Open résumé PDF ↗</a>
+    </main>
     <script>
-      // Give the Cloudflare beacon ~250 ms to fire, then send the
-      // visitor on to the actual PDF. Beacon uses sendBeacon /
-      // keepalive so the request survives the navigation, but the
-      // small delay keeps things safe across older browsers.
       setTimeout(function () {
-        window.location.replace('/resume.pdf');
+        window.location.replace("/resume.pdf");
       }, 250);
     </script>
   </body>

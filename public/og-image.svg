@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f7f5ef"/><path d="M65 98H1135" stroke="#dcded3"/>
+<text x="68" y="65" fill="#242a25" font-size="22" font-family="Arial,sans-serif" letter-spacing="3">HARSHA NARRA</text><text x="1130" y="62" text-anchor="end" font-size="13" font-family="monospace" fill="#697067">HARDWARE / ARCHITECTURE</text>
+<text x="65" y="187" font-size="13" font-family="monospace" fill="#697067" letter-spacing="2">USC · M.S. ELECTRICAL &amp; COMPUTER ENGINEERING</text>
+<text x="60" y="285" fill="#242a25" font-size="76" font-family="Arial,sans-serif" letter-spacing="-4">Small circuits.</text>
+<text x="60" y="378" fill="#242a25" font-size="76" font-family="Arial,sans-serif" letter-spacing="-4">Big <tspan font-family="Georgia,serif" font-style="italic" fill="#b84e2c">possibilities.</tspan></text>
+<text x="67" y="439" fill="#697067" font-size="18" font-family="Arial,sans-serif">Efficient hardware for intelligent systems.</text>
+<g transform="translate(775 167)"><rect width="340" height="305" fill="#e9eddf"/>
+<g stroke="#bac5ae" stroke-width=".5" opacity=".6"><path d="M0 30H340M0 60H340M0 90H340M0 120H340M0 150H340M0 180H340M0 210H340M0 240H340M0 270H340M30 0V305M60 0V305M90 0V305M120 0V305M150 0V305M180 0V305M210 0V305M240 0V305M270 0V305M300 0V305"/></g>
+<path d="M45 172 170 104 295 172V192L170 262 45 192Z" fill="#435e49"/><path d="M45 172 170 104 295 172 170 241Z" fill="#849b7d"/>
+<path d="M73 135 170 82 267 135V167L170 222 73 167Z" fill="#283a2e"/><path d="M73 135 170 82 267 135 170 190Z" fill="#445642" stroke="#a2ad8b"/>
+<path d="M110 107 170 74 230 107V121L170 155 110 121Z" fill="#a55030"/><path d="M110 107 170 74 230 107 170 142Z" fill="#d8774b" stroke="#e9ac7e"/>
+<g transform="matrix(.6 .34 -.6 .34 170 79)" fill="#eeb887" stroke="#fad6a5"><rect x="4" y="4" width="37" height="37"/><rect x="48" y="4" width="37" height="37"/><rect x="4" y="48" width="37" height="37"/><rect x="48" y="48" width="37" height="37"/></g>
+<text x="170" y="289" text-anchor="middle" fill="#52694c" font-family="monospace" font-size="10" letter-spacing="2">ARCHITECTURE → RTL → SILICON</text></g>
+<rect y="530" width="1200" height="100" fill="#283e33"/><text x="67" y="586" font-family="monospace" font-size="14" fill="#e1e8d1">FPGA ACCELERATORS   /   RISC-V   /   FULL-CUSTOM VLSI</text><text x="1133" y="586" text-anchor="end" font-size="14" font-family="monospace" fill="#e1e8d1">harsha240yeager.github.io</text></svg>

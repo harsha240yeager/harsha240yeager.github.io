@@ -1,65 +1,71 @@
-import { motion } from 'framer-motion';
-import { BrainCircuit, Cpu, CircuitBoard, Sparkles } from 'lucide-react';
-import SectionHeader from './SectionHeader.jsx';
-import { researchFocus } from '../data/portfolio.js';
-
-const iconMap = { BrainCircuit, Cpu, CircuitBoard, Sparkles };
-
-const tones = [
-  { ring: 'border-violet-400/30 text-violet-200 bg-violet-500/10', glow: 'from-violet-500/25' },
-  { ring: 'border-cyan-400/30 text-cyan-200 bg-cyan-500/10', glow: 'from-cyan-500/25' },
-  { ring: 'border-indigo-400/30 text-indigo-200 bg-indigo-500/10', glow: 'from-indigo-500/25' },
-  { ring: 'border-fuchsia-400/30 text-fuchsia-200 bg-fuchsia-500/10', glow: 'from-fuchsia-500/25' },
-];
-
+import { ArrowUpRight, BookOpen, Award } from "lucide-react";
+import { publications, recognition } from "../data/portfolio.js";
 export default function Research() {
   return (
-    <section id="research" className="relative py-16 sm:py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-5 lg:px-10">
-        <SectionHeader
-          kicker="research_focus.tex"
-          title="Research focus."
-          description="Four interconnected threads I work on — bridging algorithms, microarchitecture, and physical design."
-        />
-
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {researchFocus.map((r, i) => {
-            const Icon = iconMap[r.icon] || Cpu;
-            const tone = tones[i % tones.length];
-            return (
-              <motion.div
-                key={r.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.55, delay: i * 0.08 }}
-                className="group relative overflow-hidden glass glass-hover rounded-2xl p-6 flex flex-col"
-              >
-                <div className={`absolute -top-20 -right-16 h-44 w-44 rounded-full bg-gradient-to-br ${tone.glow} to-transparent blur-3xl opacity-70 group-hover:opacity-100 transition`} />
-                <div className="relative">
-                  <div className={`inline-flex h-11 w-11 items-center justify-center rounded-xl border ${tone.ring}`}>
-                    <Icon size={20} />
-                  </div>
-                  <h3 className="mt-4 font-display text-base font-semibold leading-snug">
-                    {r.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-white/65 leading-relaxed">
-                    {r.description}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {r.keywords.map((k) => (
-                      <span
-                        key={k}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded border border-white/10 bg-white/5 text-white/65"
-                      >
-                        {k}
-                      </span>
-                    ))}
-                  </div>
+    <section id="research" className="research-section">
+      <div className="shell section">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow section-index">
+              02 / RESEARCH & RECOGNITION
+            </span>
+            <h2>
+              Work that goes
+              <br />
+              <span className="serif-accent">beyond the bench.</span>
+            </h2>
+          </div>
+          <p>
+            Shared with the research community.
+            <br />
+            Recognized by engineers.
+          </p>
+        </div>
+        <div className="research-grid">
+          {publications.map((pub) => (
+            <article className="publication-card" key={pub.doi}>
+              <div className="publication-top">
+                <BookOpen size={22} strokeWidth={1.4} />
+                <span className="eyebrow">PEER-REVIEWED PUBLICATION</span>
+                <span className="publication-year">2024</span>
+              </div>
+              <span className="publication-venue">{pub.venue}</span>
+              <h3>{pub.title}</h3>
+              <p>{pub.description}</p>
+              <div className="publication-bottom">
+                <a
+                  href={pub.link}
+                  className="text-link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Read on IEEE Xplore <ArrowUpRight size={17} />
+                </a>
+                <a
+                  href={"https://doi.org/" + pub.doi}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="doi-link"
+                  aria-label="Open publication DOI"
+                >
+                  DOI ↗
+                </a>
+              </div>
+            </article>
+          ))}
+          <div className="awards" id="achievements">
+            {recognition.map((item) => (
+              <article className="award-row" key={item.title}>
+                <Award size={24} strokeWidth={1.4} />
+                <div>
+                  <span className="eyebrow">{item.organization}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
                 </div>
-              </motion.div>
-            );
-          })}
+                <span className="mono">{item.year}</span>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

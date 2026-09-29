@@ -1,87 +1,30 @@
-# Harshavardhan Reddy Narra — Portfolio
+# Harsha Narra — Hardware & Computer Architecture
 
-A creative, animated personal portfolio built with **React + Vite + Tailwind CSS + Framer Motion**, designed to showcase VLSI, Computer Architecture, and RTL design work.
+A responsive React portfolio for Harshavardhan Reddy Narra, with an interactive processor illustration, six technical case studies, research, experience, education, and contact links.
 
-## Stack
+## Development
 
-- **React 18** + **Vite 5** (fast dev server, instant HMR)
-- **Tailwind CSS 3** (utility-first styling, custom theme tokens)
-- **Framer Motion** (scroll-driven & entrance animations)
-- **Lucide Icons** (clean, consistent iconography)
-- Google Fonts: Inter, Space Grotesk, JetBrains Mono
+Requires Node.js 20 or newer.
 
-## Quick start
+- Install dependencies: `npm ci`
+- Start Vite: `npm run dev`
+- Build production assets: `npm run build`
+- Preview the production build: `npm run preview`
 
-```bash
-# 1. Install dependencies
-npm install
+## Content
 
-# 2. Start dev server
-npm run dev
-# open http://localhost:5173
+Edit `src/data/portfolio.js` for profile information, project results and methodology, employment, education, publications, and certifications. Results were updated from the September 2026 resume. Keep measurement context with performance claims.
 
-# 3. Production build
-npm run build
+Replace `public/resume.pdf` when updating the resume. All résumé links use `/cv.html`, which preserves the existing Cloudflare pageview tracking and redirects to the PDF. Contact uses direct email links and an email-copy button.
 
-# 4. Preview the build
-npm run preview
-```
+## Design and accessibility
 
-## Project structure
+The visual system lives in `src/index.css`: warm paper, forest green, terracotta, Inter, Instrument Serif, and JetBrains Mono. Illustrations are local SVG React components, not external images. The processor illustration has three selectable views.
 
-```
-portfolio/
-├── public/
-│   ├── favicon.svg
-│   └── resume.pdf            # downloadable résumé
-├── src/
-│   ├── components/
-│   │   ├── Background.jsx    # animated mesh + grid background
-│   │   ├── Navbar.jsx
-│   │   ├── Hero.jsx          # animated chip card + marquee
-│   │   ├── SectionHeader.jsx
-│   │   ├── About.jsx
-│   │   ├── Experience.jsx    # timeline
-│   │   ├── Education.jsx
-│   │   ├── Skills.jsx
-│   │   ├── Projects.jsx      # project cards w/ metrics
-│   │   ├── Certifications.jsx
-│   │   ├── Contact.jsx
-│   │   └── Footer.jsx
-│   ├── data/
-│   │   └── portfolio.js      # ALL CONTENT lives here
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── tailwind.config.js
-├── postcss.config.js
-├── vite.config.js
-├── index.html
-└── package.json
-```
+Projects can be filtered by discipline. Case studies use a native modal dialog with keyboard focus containment, Escape to close, focus restoration, and scroll locking. Navigation, visible focus indicators, a skip link, reduced-motion preferences, and print styles are included.
 
-## Editing content
+## Deployment
 
-All copy, projects, experience, skills, and certifications are stored in **`src/data/portfolio.js`**. Edit that one file to update the entire site — no JSX edits required.
+`.github/workflows/deploy.yml` builds and deploys to GitHub Pages on pushes to `main`. It runs `npm ci` and `npm run build`, uploads `dist/`, and deploys using the Pages environment. The public site is https://harsha240yeager.github.io/.
 
-## Deploying
-
-This is a static SPA, so you can deploy to anywhere:
-
-- **Vercel** (recommended): `vercel deploy`
-- **Netlify**: drag-and-drop the `dist/` folder after `npm run build`
-- **GitHub Pages**: build, then push `dist/` to `gh-pages` branch
-- **Cloudflare Pages**: connect the repo, build command `npm run build`, output `dist`
-
-## Customization
-
-- **Colors / accents**: `tailwind.config.js` → `theme.extend.colors.accent`
-- **Fonts**: `index.html` (Google Fonts link) + `tailwind.config.js`
-- **Background animation**: `src/components/Background.jsx`
-- **Hero chip card**: `src/components/Hero.jsx`
-
-## Credits
-
-- Profile data sourced from [linkedin.com/in/harsha240](https://linkedin.com/in/harsha240)
-- Icons by [Lucide](https://lucide.dev)
-- Built with care.
+The site is hosted at the domain root. Keep Vite's base path at its default unless moving to a project subpath.

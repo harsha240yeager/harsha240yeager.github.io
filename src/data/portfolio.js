@@ -1,501 +1,386 @@
+// Updated from Harsha_Resume.pdf, September 2026. Metrics retain their workload context.
 export const profile = {
-  name: 'Harshavardhan Reddy Narra',
-  shortName: 'Harshavardhan',
-  initials: 'HN',
-  title: 'Graduate Researcher · VLSI & Computer Architecture',
-  subtitle: 'M.S. Electrical Engineering · University of Southern California',
-  tagline: 'Hardware accelerators, microarchitecture, full-custom VLSI',
-  status: 'Open for research collaborations in RTL/DV, microarchitecture & hardware accelerators',
-  location: 'Los Angeles, California, USA',
-  email: 'hnarra@usc.edu',
-  resume: '/resume.pdf',
-  // Tracked CV path — clicks land on /cv.html which fires a Cloudflare
-  // pageview and then redirects to /resume.pdf. Use this anywhere a
-  // visitor-facing "download CV" button is rendered.
-  cvPath: '/cv.html',
-  photo: '/profile.jpg',
-  // Public booking URL (Cal.com or Calendly). Leave '' to hide the
-  // "Book a chat" CTAs across the site. Fill in after creating an
-  // account at https://cal.com/ (free) or https://calendly.com/.
-  bookingUrl: '',
-  // Formsubmit.co endpoint. Posts the contact-form payload to your
-  // email. No account needed — the first submission triggers a one-time
-  // confirmation email; thereafter messages are delivered straight to
-  // your inbox.
-  contactFormEndpoint: 'https://formsubmit.co/hnarra@usc.edu',
-  affiliations: [
-    { label: 'USC · M.S. EE', tone: 'violet' },
-    { label: 'IIT Bhubaneswar · Research Intern', tone: 'cyan' },
-    { label: 'IEEE HiPC 2024 Author', tone: 'indigo' },
-    { label: 'DVCON India 2024 · 1st Runner-Up', tone: 'fuchsia' },
-  ],
+  name: "Harshavardhan Reddy Narra",
+  shortName: "Harsha",
+  initials: "HN",
+  title: "Hardware researcher & engineer",
+  subtitle: "M.S. Electrical & Computer Engineering · USC",
+  location: "Los Angeles, CA",
+  email: "hnarra@usc.edu",
+  resume: "/resume.pdf",
+  cvPath: "/cv.html",
+  photo: "/profile.jpg",
+  status: "Open to research collaborations",
   socials: {
-    linkedin: 'https://linkedin.com/in/harsha240',
-    github: 'https://github.com/harsha240yeager',
-    email: 'mailto:hnarra@usc.edu',
-    scholar: 'https://ieeexplore.ieee.org/author/10898880',
-    googleScholar: '',
-    orcid: '',
+    github: "https://github.com/harsha240yeager",
+    linkedin: "https://linkedin.com/in/harsha240",
+    email: "mailto:hnarra@usc.edu",
   },
-  acknowledgments:
-    'Thanks to my advisors and mentors — Prof. Gandhi Puvvada and Prof. Shahin Nazarian (USC), Prof. Srinivas Boppu (IIT Bhubaneswar, HDC research mentor), and Mr. Kunal Ghosh (VSD) — for shaping my path through computer architecture and full-custom VLSI.',
-  about: `I'm an M.S. Electrical Engineering researcher at USC focused on hardware acceleration for machine-learning workloads, microarchitecture, and full-custom VLSI. My research spans RTL design and verification of pipelined processors, custom CNN/ViT accelerators on FPGA, hyperdimensional-computing datapaths, and transistor-level layout in Cadence Virtuoso. I'm an IEEE-published author (HiPC 2024) and the First Runner-Up of the DVCON India 2024 Design Contest. I enjoy taking ideas from architectural specification, through RTL and verification, all the way down to silicon.`,
-  bioShort: `I research hardware accelerators for ML, microarchitecture, and full-custom VLSI — taking ideas from architectural specification, through RTL and verification, down to silicon. IEEE HiPC 2024 author and DVCON India 2024 First Runner-Up.`,
-  interests: [
-    'Computer Architecture & Microarchitecture',
-    'Hardware Accelerators for Machine Learning',
-    'RTL Design & Verification',
-    'Full-Custom VLSI',
-    'FPGA Prototyping & Reconfigurable Computing',
-    'Hyperdimensional & Brain-Inspired Computing',
-  ],
-  highlights: [
-    { value: '116', suffix: ' GOP/s', label: 'CNN-accelerator throughput on Genesys-2 FPGA' },
-    { value: '2.8', suffix: '×', label: 'ViT feature-extraction speedup vs. CPU baseline' },
-    { value: '833', suffix: ' MHz', label: 'Full-custom 16-bit MAC clock target' },
-    { value: '1024', suffix: '-bit', label: 'HDC XOR-permute datapath in SystemVerilog' },
-  ],
-  researchVision: [
-    'How can hardware accelerators close the memory-bandwidth gap for transformer-class workloads at the edge — can architectural support (compression, sparsity, dataflow co-design, near-data processing) reach iso-accuracy at order-of-magnitude lower DRAM traffic?',
-    'Are brain-inspired alternatives — hyperdimensional computing and neuro-symbolic primitives — a viable energy-efficient substitute for transformer inference at constrained-compute, constrained-energy operating points, and what hardware support do they need?',
-  ],
+  about:
+    "I’m Harsha, a graduate student at the University of Southern California. I design hardware that makes demanding computation more efficient—from brain-inspired classifiers and ML accelerators to pipelined processors and transistor-level layouts.",
+  philosophy:
+    "I like working across the boundaries: understanding the algorithm, shaping the architecture, writing the RTL, and seeing it run on real hardware. The most interesting part is finding out where an elegant idea meets a practical constraint.",
 };
-
-export const news = [
-  {
-    date: 'May 2026',
-    type: 'New',
-    text: 'Completed Cadence Essential SystemVerilog for UVM — Universal Verification Methodology, sequence-driven testbenches, and coverage-driven verification.',
-    accent: 'violet',
-  },
-  {
-    date: 'Apr 2026',
-    type: 'New',
-    text: 'Earned the Cadence SystemVerilog for Design and Verification (v25.03) certification.',
-    accent: 'cyan',
-  },
-  {
-    date: 'Jan 2026',
-    type: 'Joined',
-    text: 'Joined IIT Bhubaneswar as a Research Intern — building a synthesizable 1024-bit HDC XOR-permute pipeline in SystemVerilog.',
-    accent: 'violet',
-  },
-  {
-    date: 'Dec 2025',
-    type: 'Honor',
-    text: 'Ranked #1 team in EE477 (MOS VLSI Circuit Design) for our full-custom 16-bit MAC unit (Booth + Kogge-Stone) at USC.',
-    accent: 'indigo',
-  },
-  {
-    date: 'Aug 2025',
-    type: 'Started',
-    text: 'Started M.S. in Electrical Engineering (VLSI & Computer Architecture) at the University of Southern California.',
-    accent: 'violet',
-  },
-  {
-    date: 'Dec 2024',
-    type: 'Paper',
-    text: 'Presented "Efficient Feature Extraction for ViT Model using Custom CNN Accelerator" at IEEE HiPC 2024 (ROCS Workshop).',
-    accent: 'cyan',
-  },
-  {
-    date: 'Sep 2024',
-    type: 'Award',
-    text: 'First Runner-Up at DVCON India 2024 Design Contest for the ViT/CNN accelerator project.',
-    accent: 'fuchsia',
-  },
-];
-
-export const researchFocus = [
-  {
-    icon: 'BrainCircuit',
-    title: 'Hardware accelerators for ML',
-    description:
-      'Custom CNN / Vision-Transformer accelerators integrated with RISC-V cores over AXI4 — exploring systolic-array topologies, dataflow, and PPA trade-offs on FPGA.',
-    keywords: ['CNN', 'Vision Transformer', 'Systolic Array', 'Dataflow'],
-  },
-  {
-    icon: 'Cpu',
-    title: 'Microarchitecture & RTL',
-    description:
-      'Pipelined RISC-V cores (RV64I + Zba) with hazard resolution, forwarding, branch prediction, and self-checking SystemVerilog testbenches with assertion-based verification.',
-    keywords: ['RISC-V', 'Pipelining', 'Hazards', 'SVA'],
-  },
-  {
-    icon: 'CircuitBoard',
-    title: 'Full-custom VLSI',
-    description:
-      'Schematic-to-layout in Cadence Virtuoso — Booth multipliers, compressor trees, sparse Kogge-Stone CLAs — with DRC/LVS/PEX and corner timing analysis.',
-    keywords: ['Cadence', 'Booth + KSA', 'DRC/LVS', 'Timing'],
-  },
-  {
-    icon: 'Sparkles',
-    title: 'Emerging compute',
-    description:
-      'Synthesizable RTL pipelines for hyperdimensional computing (HDC) — parameterized 1024-bit XOR-plus-permute datapaths with valid/ready handshake.',
-    keywords: ['HDC', 'In-Memory Compute', 'Brain-Inspired'],
-  },
-];
-
-export const experience = [
-  {
-    role: 'Research Intern',
-    company: 'Indian Institute of Technology (IIT) Bhubaneswar',
-    location: 'Odisha, India',
-    period: 'Jan 2026 – Present',
-    advisor: 'Prof. Srinivas Boppu',
-    accent: 'violet',
-    bullets: [
-      'Designing a synthesizable SystemVerilog RTL pipeline for Hyperdimensional Computing (HDC) — a 1024-bit XOR-plus-permute datapath with configurable permutation modes (word reversal, per-word rotation, full-vector rotation).',
-      'Built a parameterized, modular architecture (WORDS × BITS_PER_WORD) with valid/ready handshake signaling and registered pipeline stages for clean timing closure.',
-      'Developed a self-checking SystemVerilog testbench with golden-model verification covering all permutation modes, boundary rotation values, and output backpressure stall scenarios.',
-    ],
-    tags: ['SystemVerilog', 'HDC', 'RTL', 'Verification'],
-  },
-  {
-    role: 'Research Intern',
-    company: 'VLSI System Design (VSD)',
-    location: 'Remote',
-    period: 'Apr 2024 – May 2024',
-    accent: 'cyan',
-    bullets: [
-      'Worked on the VSDSquadron Mini board powered by the CH32V003F4U6 chip with a 32-bit RISC-V core (RV32EC ISA).',
-      'Followed end-to-end chip design flow: chip specifications → ASIC design → tape-out.',
-      'Debugged and tested a full subtractor to validate correct board operation. Mentor: Mr. Kunal Ghosh.',
-    ],
-    tags: ['RISC-V', 'ASIC', 'Tape-out'],
-  },
-  {
-    role: 'Summer Research Intern',
-    company: 'Indian Institute of Technology (IIT) BHU, Varanasi',
-    location: 'Uttar Pradesh, India',
-    period: 'May 2023 – Jul 2023',
-    accent: 'violet',
-    bullets: [
-      'Developed an IoT-based wearable health-monitoring device on ESP32-WROOM with integrated PPG, ECG, temperature, and gas sensors — supporting real-time signal processing and wireless telemetry.',
-      'Improved diagnostic accuracy by 8% for aerospace-medicine applications, working in a team of six.',
-    ],
-    tags: ['ESP32', 'Embedded HW', 'Signal Processing'],
-  },
-];
-
-export const education = [
-  {
-    school: 'University of Southern California',
-    degree: 'M.S. in Electrical Engineering — VLSI & Computer Architecture',
-    period: 'Aug 2025 – Present',
-    location: 'Los Angeles, California, USA',
-    coursework: [
-      'EE457 — Computer Systems Organization (Prof. Gandhi Puvvada)',
-      'EE477 — MOS VLSI Circuit Design (Prof. Shahin Nazarian)',
-    ],
-    accent: 'violet',
-  },
-  {
-    school: 'Jawaharlal Nehru Technological University, Hyderabad',
-    degree: 'B.Tech in Electrical and Electronics Engineering',
-    period: 'Aug 2021 – May 2025',
-    location: 'Hyderabad, India',
-    coursework: [
-      'Computer Organization',
-      'Digital Electronics',
-      'Computer Arithmetic',
-      'Microprocessor & Microcontroller',
-    ],
-    accent: 'cyan',
-  },
-];
-
-export const skills = [
-  {
-    group: 'Architecture',
-    icon: 'Cpu',
-    items: ['Computer Architecture', 'Microarchitecture', 'Pipelining', 'Memory Hierarchy', 'AXI4'],
-  },
-  {
-    group: 'RTL & EDA',
-    icon: 'CircuitBoard',
-    items: ['Verilog', 'SystemVerilog', 'SVA', 'UVM', 'Cadence Virtuoso', 'QuestaSim', 'Vivado', 'ModelSim', 'DRC/LVS/PEX'],
-  },
-  {
-    group: 'Software',
-    icon: 'Code2',
-    items: ['C++', 'Python', 'MATLAB', 'TCL', 'Linux', 'Git', 'Bash'],
-  },
-  {
-    group: 'Hardware Platforms',
-    icon: 'HardDrive',
-    items: ['Genesys 2 FPGA (Kintex-7)', 'Vega AS1061 RISC-V', 'VSDSquadron Mini', 'ESP32-WROOM'],
-  },
-];
-
 export const projects = [
   {
-    id: 'vit-cnn',
-    category: 'research',
-    title: 'Custom CNN Accelerator for Vision-Transformer Feature Extraction',
-    period: 'IEEE HiPC 2024 · DVCON India 2024',
-    accent: 'violet',
+    id: "hdc",
+    number: "01",
+    category: "Accelerators",
+    kind: "Ongoing research · IIT Bhubaneswar",
+    title: "Brain-inspired compute. Hardware-proven.",
+    shortTitle: "Streaming HDC accelerator",
+    subtitle: "A 1024-bit hyperdimensional computing classifier on Zynq-7020.",
+    description:
+      "A streaming, synthesizable SystemVerilog accelerator that takes hyperdimensional classification from a Python golden model to measured FPGA performance.",
+    visual: "hdc",
     featured: true,
-    badge: '1st Runner-Up · DVCON India 2024',
-    diagram: 'CNNAccelerator',
-    description:
-      'A LeNet-5–inspired CNN accelerator IP integrated with the Vega AS1061 RISC-V processor over AXI4, deployed on a Digilent Genesys 2 FPGA (Kintex-7, XC7K325T-2FFG900C). Built to accelerate the front-end feature-extraction stage of a Vision-Transformer–based malware-detection pipeline. Reduced feature-extraction latency by 2.8× over the CPU baseline while preserving end-to-end ViT accuracy. Earned the First Runner-Up at DVCON India 2024 and a peer-reviewed paper at IEEE HiPC 2024 (ROCS Workshop).',
-    memoryNote:
-      'On-chip BRAM (≈18% utilization) holds activations and weights for the streamed convolution stages, removing the off-chip DRAM bottleneck on the feature-extractor critical path. AXI4 is reserved for control and bulk weight loading.',
-    methodology:
-      'Baseline: software inference of the LeNet-5 feature-extractor stage on the Vega AS1061 RISC-V softcore (compiled with -O2). Workload: feature-extraction stage of a ViT malware-detection pipeline. Measured: end-to-end stage latency on the Genesys 2 FPGA; throughput from cycle counts cross-checked with on-board profiling; power from Vivado XPower Analyzer. End-to-end ViT classification accuracy preserved versus the unaccelerated baseline.',
+    tags: ["SystemVerilog", "Zynq-7020", "AXI DMA", "Python"],
     metrics: [
-      { label: 'Throughput', value: '116 GOP/s' },
-      { label: 'Frequency', value: '200 MHz' },
-      { label: 'Power', value: '2.498 W' },
-      { label: 'LUT util.', value: '65%' },
-      { label: 'BRAM', value: '18%' },
-      { label: 'DSP', value: '11.5%' },
+      { value: "~177×", label: "faster than ARM" },
+      { value: "4.63 μs", label: "latency / window" },
+      { value: "~174×", label: "energy efficiency" },
     ],
-    tags: ['Verilog', 'Systolic Array', 'AXI4', 'RISC-V', 'CNN', 'ViT', 'FPGA'],
+    challenge:
+      "Run a complete hyperdimensional computing classifier efficiently on an FPGA, while keeping its outputs bit-exact with a software reference and sustaining a continuous stream of input windows.",
+    approach: [
+      "Built a 1024-bit datapath for XOR binding, permutation, bundling, and Hamming-distance / population-count classification in synthesizable SystemVerilog.",
+      "Validated hardware outputs against a Python golden model on a Zynq-7020 running at 100 MHz.",
+      "Brought up scatter-gather DMA from DDR at approximately 216k windows per second, removing processor copies from each transfer.",
+    ],
+    result:
+      "Measured 493,512 EMG windows: 72.78% classification accuracy, 4.63 μs and 12.0 μJ per window. The ARM baseline measured 818 μs and 2.09 mJ per window—approximately 177× faster and 174× more energy-efficient for this workload.",
+    note: "Research with Prof. Srinivas Boppu at IIT Bhubaneswar. Performance comparisons apply to the measured EMG workload and ARM baseline.",
     links: [
-      { label: 'IEEE Xplore', href: 'https://ieeexplore.ieee.org/document/10898880' },
-      { label: 'DOI', href: 'https://doi.org/10.1109/HiPCW63042.2024.00016' },
-    ],
-    artifactNote: 'Source code: available on request (hnarra@usc.edu).',
-  },
-  {
-    id: 'hdc',
-    category: 'research',
-    title: '1024-bit HDC XOR-Permute Pipeline',
-    period: 'IIT Bhubaneswar · Ongoing',
-    advisor: 'Advisor: Prof. Srinivas Boppu',
-    accent: 'cyan',
-    diagram: 'HDC',
-    description:
-      'Open question: can hyperdimensional-computing (HDC) datapaths sustain transformer-class throughput at significantly lower energy than ML accelerators on edge classification workloads? This work builds the synthesizable RTL substrate to investigate that — a parameterized 1024-bit XOR-plus-permute pipeline (word reversal, per-word rotation, full-vector rotation) with valid/ready handshakes and registered stages, intended as the binding/permutation primitive for downstream HDC inference experiments.',
-    methodology:
-      'Verification: golden-model SystemVerilog testbench covering all permutation modes, boundary rotation values, and output-backpressure stall scenarios. Synthesis target: Vivado for FPGA prototyping; PPA characterization in progress.',
-    metrics: [
-      { label: 'Width', value: '1024-bit' },
-      { label: 'Modes', value: '3 permutations' },
-      { label: 'Handshake', value: 'valid/ready' },
-      { label: 'Verif.', value: 'Golden model' },
-    ],
-    tags: ['SystemVerilog', 'HDC', 'Pipeline', 'Parameterized'],
-    links: [
-      { label: 'GitHub', href: 'https://github.com/harsha240yeager/hdc-xor-permute-systemverilog' },
+      {
+        label: "View RTL repository",
+        href: "https://github.com/harsha240yeager/hdc-xor-permute-systemverilog",
+      },
     ],
   },
   {
-    id: 'mac',
-    category: 'coursework',
-    title: 'Full-Custom 16-bit MAC Unit',
-    period: 'EE477 (USC) · Cadence Virtuoso · Ranked #1 in class',
-    accent: 'violet',
-    diagram: 'MAC',
+    id: "vit-cnn",
+    number: "02",
+    category: "Accelerators",
+    kind: "IEEE HiPC 2024 · DVCon India",
+    title: "A faster front end for vision transformers.",
+    shortTitle: "Systolic CNN accelerator",
+    subtitle: "Custom CNN IP for Vision Transformer feature extraction.",
     description:
-      'A full-custom 16-bit Multiply-Accumulate unit using radix-4 Booth encoders, a 3:2 / 6:2 compressor tree, and a sparse-4 Kogge-Stone CLA. Schematic-to-layout in Cadence Virtuoso with end-to-end DRC/LVS, RCX parasitic extraction, and hierarchical post-layout timing characterization. Optimized power-distribution networks for signal integrity and PAD efficiency. Ranked #1 team in the course cohort.',
-    methodology:
-      'Schematic capture → custom layout in Cadence Virtuoso, DRC/LVS clean, RCX parasitic extraction. Frequency, period, power, and area characterized post-extraction at the design corner. Course-project; PDK and corners per EE477 lab spec.',
+      "A 5 × 6 systolic processing array, integrated with a RISC-V host over AXI4. Published at IEEE HiPC and awarded at DVCon India.",
+    visual: "systolic",
+    tags: ["Verilog", "Kintex-7", "RISC-V", "AXI4"],
     metrics: [
-      { label: 'Frequency', value: '~833 MHz' },
-      { label: 'Period', value: '1.2 ns' },
-      { label: 'Power', value: '577.3 µW' },
-      { label: 'Area', value: '2041 λ²' },
+      { value: "116", unit: "GOP/s", label: "throughput" },
+      { value: "2.8×", label: "lower stage latency" },
+      { value: "200 MHz", label: "frequency" },
     ],
-    tags: ['Cadence', 'Full-Custom', 'Booth', 'Kogge-Stone', 'DRC/LVS', 'RCX'],
+    challenge:
+      "Reduce the cost of CNN-based feature extraction in a Vision Transformer pipeline by mapping its compute-intensive stages onto a custom FPGA accelerator.",
+    approach: [
+      "Designed a 5 × 6 systolic PE array for convolution, pooling, and activation as a custom CNN IP.",
+      "Connected the accelerator to a Vega AS1061 RISC-V host over AXI4 on the Genesys 2 Kintex-7 FPGA.",
+      "Mapped the Vision Transformer feature-extraction stage onto the array and compared stage latency against software.",
+    ],
+    result:
+      "Achieved 116 GOP/s at 200 MHz and 2.8× lower feature-extraction stage latency versus software, at 2.498 W on Genesys 2. The three-person team earned First Runner-Up at the DVCon India 2024 Design Contest.",
+    note: "Published at IEEE HiPC 2024, ROCS Workshop. The speedup describes feature extraction, not the entire Vision Transformer model. Source code is available on request.",
+    links: [
+      {
+        label: "Read the IEEE paper",
+        href: "https://ieeexplore.ieee.org/document/10898880",
+      },
+      {
+        label: "Publication DOI",
+        href: "https://doi.org/10.1109/HiPCW63042.2024.00016",
+      },
+    ],
+  },
+  {
+    id: "rv64i",
+    number: "03",
+    category: "Architecture",
+    kind: "LFX mentorship coding challenge",
+    title: "Five stages. Every hazard accounted for.",
+    shortTitle: "Pipelined RISC-V processor",
+    subtitle: "An in-order RV64I + Zba Harvard pipeline.",
+    description:
+      "A five-stage processor with forwarding, load-use stalls, branch flushes, and a self-checking testbench driven by compiled C.",
+    visual: "pipeline",
+    tags: ["SystemVerilog", "RV64I + Zba", "Verification"],
+    metrics: [
+      { value: "5", label: "pipeline stages" },
+      { value: "RV64I", label: "+ Zba extension" },
+    ],
+    challenge:
+      "Implement a correct, pipelined RISC-V processor that handles the dependencies and control-flow changes of compiled programs.",
+    approach: [
+      "Implemented a five-stage, in-order Harvard pipeline in SystemVerilog with RV64I and the Zba address-generation extension.",
+      "Added data forwarding, load-use stalls, and branch flushes to resolve pipeline hazards.",
+      "Validated behavior using a self-checking testbench driven by compiled C programs.",
+    ],
+    result:
+      "An implemented RV64I + Zba pipeline and verification environment, submitted for the LFX Mentorship coding challenge.",
+    note: "Open-source processor project. No frequency or benchmark-throughput claim is made.",
+    links: [
+      {
+        label: "Explore the source",
+        href: "https://github.com/harsha240yeager/5-stage-pipelined-RISC-V-RV64I-processor",
+      },
+    ],
+  },
+  {
+    id: "mac",
+    number: "04",
+    category: "VLSI",
+    kind: "USC · EE477 · #1 team",
+    title: "From logic to layout.",
+    shortTitle: "Full-custom 16-bit MAC",
+    subtitle: "A multiply-accumulate unit, designed down to the transistor.",
+    description:
+      "Radix-4 Booth encoding, a compressor tree, and a sparse Kogge–Stone adder. Taken through layout and post-extraction timing in Cadence Virtuoso.",
+    visual: "layout",
+    tags: ["Cadence Virtuoso", "Full-custom", "DRC / LVS"],
+    metrics: [
+      { value: "16-bit", label: "MAC datapath" },
+      { value: "#1", label: "team in EE477" },
+    ],
+    challenge:
+      "Design a full-custom multiply-accumulate unit and balance power, performance, and area through schematic and physical design.",
+    approach: [
+      "Combined radix-4 Booth encoders, a compressor tree, and a sparse-4 Kogge–Stone carry-lookahead adder.",
+      "Completed schematic capture and custom layout in Cadence Virtuoso.",
+      "Performed DRC/LVS verification, parasitic extraction, and post-layout timing characterization.",
+    ],
+    result: "Ranked #1 team in USC’s EE477 MOS VLSI Circuit Design course.",
+    note: "Academic team project. The layout illustration is a conceptual drawing, not a foundry layout.",
     links: [],
   },
   {
-    id: 'rv64i',
-    category: 'coursework',
-    title: '5-Stage Pipelined RISC-V RV64I Processor (+ Zba)',
-    period: 'LFX Mentorship Coding Challenge',
-    accent: 'cyan',
-    diagram: 'Pipeline',
+    id: "branch-prediction",
+    number: "05",
+    category: "Architecture",
+    kind: "USC · EE557 · Fall 2026",
+    title: "Predicting the next branch.",
+    shortTitle: "Branch prediction with Intel Pin",
+    subtitle: "Four predictors, evaluated on 9.70 million branches.",
     description:
-      'A 5-stage in-order RV64I processor in SystemVerilog with the Zba address-generation extension (SH1ADD, SH2ADD, SH3ADD). Implements full hazard resolution — data-forwarding, ID-bypass, load-use stall, and early-branch prediction with dual forwarding units (HDU_Br, FU_Br). Validated with directed and corner-case testbenches, including SVA assertions for ALU/lw/sw/beq under hazards.',
-    methodology:
-      'Verification: directed and corner-case testbenches with SystemVerilog Assertions covering ALU, load/store, and branch behavior under all hazard conditions. Simulation in ModelSim. Open-source coding-challenge submission.',
+      "Instrumented real execution with C++ and Intel Pin to compare always-taken, global, bimodal, and correlated branch predictors.",
+    visual: "branches",
+    tags: ["C++", "Intel Pin", "Microarchitecture"],
     metrics: [
-      { label: 'ISA', value: 'RV64I + Zba' },
-      { label: 'Stages', value: '5' },
-      { label: 'Hazards', value: 'Forward + Stall' },
-      { label: 'Verif.', value: 'SVA + ModelSim' },
+      { value: "82.1%", label: "correlated accuracy" },
+      { value: "9.70M", label: "branches evaluated" },
     ],
-    tags: ['SystemVerilog', 'RISC-V', 'Pipelining', 'SVA', 'LFX'],
-    links: [
-      { label: 'GitHub', href: 'https://github.com/harsha240yeager/5-stage-pipelined-RISC-V-RV64I-processor' },
+    challenge:
+      "Measure how branch-history information changes prediction accuracy on the same dynamic instruction stream.",
+    approach: [
+      "Implemented always-taken, 2-bit global, and 2-bit bimodal predictors indexed by PC[4:0].",
+      "Built a 2-bit correlated predictor with a 4-bit global history register and PC[3:0].",
+      "Instrumented tar with Intel Pin and evaluated all four predictors over 9.70 million branches.",
+    ],
+    result:
+      "Prediction accuracy on this trace: 74.3% always-taken, 79.3% global, 80.0% bimodal, and 82.1% correlated.",
+    note: "EE557 coursework. Accuracy is specific to the measured tar trace and predictor configurations.",
+    links: [],
+  },
+  {
+    id: "lenet",
+    number: "06",
+    category: "Accelerators",
+    kind: "USC · EE511 · Fall 2026",
+    title: "Less data. More possibility.",
+    shortTitle: "LeNet-5 & activation compression",
+    subtitle: "Understanding the model before building the accelerator.",
+    description:
+      "LeNet-5 from primitive PyTorch layers, with a layer-wise compute analysis and PCA/SVD experiments for a smaller hardware footprint.",
+    visual: "compression",
+    tags: ["PyTorch", "Python", "PCA / SVD"],
+    metrics: [
+      { value: "99.06%", label: "MNIST test accuracy" },
+      { value: "~80%", label: "C5/F6 weight reduction" },
+    ],
+    challenge:
+      "Understand a CNN’s compute and storage requirements, then investigate low-rank compression without a large accuracy penalty.",
+    approach: [
+      "Implemented LeNet-5 from primitive layers without a model zoo and trained on MNIST and Fashion-MNIST.",
+      "Built a layer-wise MAC, parameter, and arithmetic-intensity table.",
+      "Implemented PCA/SVD from scratch on activations and evaluated rank-16 SVD on C5/F6.",
+    ],
+    result:
+      "Reached 99.06% test accuracy on MNIST and 89.58% on Fashion-MNIST. Rank-16 SVD reduced approximately 80% of the C5/F6 weights while remaining within one percentage point of the uncompressed baseline.",
+    note: "EE511 coursework. Weight reduction applies to C5/F6, not the complete model; these are software experiments, not measured FPGA results.",
+    links: [],
+  },
+];
+export const experience = [
+  {
+    role: "Teaching Assistant",
+    company: "University of Southern California",
+    shortCompany: "USC",
+    period: "Aug 2026 — Present",
+    current: true,
+    detail: "TAC 348: Making Smart Devices · Prof. Rob Parke",
+    description:
+      "Helping students turn circuits and code into connected devices. Leading embedded-systems labs and mentoring firmware, sensor integration, wireless communication, and hardware debugging.",
+    tags: ["Particle Photon 2", "Embedded systems", "IoT"],
+  },
+  {
+    role: "Research Intern",
+    company: "IIT Bhubaneswar",
+    shortCompany: "IIT BBS",
+    period: "Jan 2026 — Present",
+    current: true,
+    detail: "Computer architecture · Prof. Srinivas Boppu",
+    description:
+      "Building and measuring a streaming 1024-bit hyperdimensional computing accelerator—from synthesizable RTL and a Python golden model to FPGA bring-up and scatter-gather DMA.",
+    tags: ["SystemVerilog", "HDC", "FPGA"],
+  },
+  {
+    role: "Research Intern",
+    company: "VLSI System Design",
+    shortCompany: "VSD",
+    period: "Apr — May 2024",
+    detail: "RISC-V & ASIC design · Kunal Ghosh",
+    description:
+      "Explored the chip design flow and validated a full-subtractor design on the RISC-V-based VSDSquadron Mini platform.",
+    tags: ["RISC-V", "ASIC flow"],
+  },
+  {
+    role: "Summer Research Intern",
+    company: "IIT BHU, Varanasi",
+    shortCompany: "IIT BHU",
+    period: "May — Jul 2023",
+    detail: "Embedded hardware & sensing",
+    description:
+      "Worked with a six-person team on an ESP32 wearable health-monitoring prototype, integrating PPG, ECG, temperature, and gas sensors with wireless telemetry.",
+    tags: ["ESP32", "Signal processing"],
+  },
+];
+export const education = [
+  {
+    school: "University of Southern California",
+    degree: "M.S. Electrical & Computer Engineering",
+    focus: "VLSI & Computer Architecture",
+    period: "2025 — 2027 (expected)",
+    coursework: [
+      "EE457 · Computer Systems Organization",
+      "EE477 · MOS VLSI Circuit Design",
+      "EE557 · Computer Systems Architecture",
+      "EE511 · Machine Learning Hardware Accelerators",
     ],
   },
   {
-    id: 'cnn-systolic',
-    category: 'coursework',
-    title: '5×6 Systolic-Array CNN Accelerator (LeNet-5)',
-    period: 'Underlying engine for the ViT paper',
-    accent: 'violet',
-    diagram: 'CNNAccelerator',
-    description:
-      'The underlying systolic-array engine that powered the ViT feature-extractor IP — a 5×6 PE array implementing convolution, pooling, and activation in Verilog, integrated over AXI4 with the Vega AS1061 RISC-V softcore on a Genesys 2 FPGA (Kintex-7). Listed separately for completeness; the research narrative is in the flagship project above.',
-    metrics: [
-      { label: 'PE array', value: '5 × 6' },
-      { label: 'Throughput', value: '116 GOP/s' },
-      { label: 'Frequency', value: '200 MHz' },
-    ],
-    tags: ['Verilog', 'Systolic Array', 'CNN', 'AXI4', 'RISC-V'],
-    links: [
-      { label: 'Linked work', href: 'https://ieeexplore.ieee.org/document/10898880' },
+    school: "JNTU Hyderabad",
+    degree: "B.Tech. Electrical & Electronics Engineering",
+    period: "2021 — 2025",
+    coursework: [],
+  },
+];
+export const skills = [
+  {
+    number: "01",
+    group: "Architecture & design",
+    items: [
+      "RISC-V",
+      "Microarchitecture",
+      "Systolic arrays",
+      "Branch prediction",
+      "AMBA AXI4",
+      "GPU architecture",
     ],
   },
   {
-    id: 'vsd',
-    category: 'coursework',
-    title: 'VSDSquadron Mini — RISC-V Tape-Out Flow',
-    period: 'VSD Internship · CH32V003F4U6 (RV32EC)',
-    accent: 'cyan',
-    diagram: null,
-    description:
-      'End-to-end ASIC chip-design exposure on the VSDSquadron Mini board — chip specifications → ASIC design → tape-out — under the mentorship of Mr. Kunal Ghosh. Validated board functionality with a full-subtractor test design.',
-    metrics: [
-      { label: 'Core', value: 'RV32EC' },
-      { label: 'Flow', value: 'Spec → Tape-out' },
-      { label: 'Test', value: 'Full Subtractor' },
+    number: "02",
+    group: "RTL & verification",
+    items: [
+      "Verilog",
+      "SystemVerilog",
+      "QuestaSim",
+      "ModelSim",
+      "Vivado",
+      "Vitis HLS",
     ],
-    tags: ['RISC-V', 'ASIC', 'VSD'],
-    links: [
-      { label: 'GitHub', href: 'https://github.com/harsha240yeager/VSDSquadron_miniInternship' },
+  },
+  {
+    number: "03",
+    group: "Software & modeling",
+    items: [
+      "C / C++",
+      "Python",
+      "CUDA",
+      "PyTorch",
+      "NumPy",
+      "Intel Pin",
+      "TCL",
+    ],
+  },
+  {
+    number: "04",
+    group: "Silicon & systems",
+    items: [
+      "Cadence Virtuoso",
+      "DRC / LVS",
+      "Full-custom VLSI",
+      "Zynq-7020",
+      "Kintex-7",
+      "Linux / Git",
     ],
   },
 ];
-
-export const certifications = [
-  {
-    name: 'SystemVerilog for Design and Verification (v25.03)',
-    issuer: 'Cadence',
-    year: 'Apr 2026',
-    note: 'Industry-recognized Cadence exam covering SystemVerilog RTL design and verification methodology — directly aligned with my core RTL/DV work.',
-    link: 'https://www.credly.com/badges/ca72d8e8-ae25-4b64-85f1-7ef5c7532ec2/linked_in_profile',
-    linkLabel: 'verify on Credly',
-    featured: true,
-  },
-  {
-    name: 'Essential SystemVerilog for UVM',
-    issuer: 'Cadence System Design and Analysis',
-    year: 'May 2026',
-    note: 'Cadence training on the Universal Verification Methodology — class library, sequence-driven testbench architecture, scoreboards, and coverage-driven verification.',
-    link: null,
-  },
-  {
-    name: 'LFX Mentorship Coding Challenge — RISC-V',
-    issuer: 'Linux Foundation · LFX',
-    year: '2026',
-    note: 'Participated in the LFX Mentorship coding challenge that produced the 5-stage pipelined RV64I + Zba processor.',
-    link: 'https://github.com/harsha240yeager/5-stage-pipelined-RISC-V-RV64I-processor',
-  },
-  {
-    name: 'Analog Circuits (Elite)',
-    issuer: 'NPTEL · IIT Bombay',
-    year: 'Jan–Mar 2023',
-    note: 'Elite-tier certification (consolidated 75%, top performance band) from the NPTEL/IIT Bombay 8-week course on analog electronics — directly underpins my MOS-level VLSI design work.',
-    link: '/credentials/nptel-analog-circuits.png',
-    linkLabel: 'view certificate',
-  },
-  {
-    name: 'MATLAB Onramp',
-    issuer: 'MathWorks',
-    year: 'Jun 2023',
-    note: 'MATLAB programming and computation fundamentals used for hardware modeling and signal processing.',
-    link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=f8c9a0f1-314f-44de-b478-b73048e61a47',
-  },
-  {
-    name: 'MATLAB App Designer Onramp',
-    issuer: 'MathWorks',
-    year: '2023',
-    note: 'MATLAB App Designer fundamentals — GUI design for algorithm and hardware-result visualization.',
-    link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=4d0b56ca-fa08-40f0-8c1c-d3a2691bf3f8',
-  },
-];
-
 export const publications = [
   {
-    title: 'Efficient Feature Extraction for ViT Model using Custom CNN Accelerator',
-    authors: 'H. R. Narra, et al.',
-    venue: 'IEEE International Conference on High Performance Computing, Data, and Analytics Workshops (HiPCW), ROCS Workshop',
-    date: 'December 2024',
-    doi: '10.1109/HiPCW63042.2024.00016',
-    link: 'https://ieeexplore.ieee.org/document/10898880',
-    bibtex: `@inproceedings{narra2024vit,
-  author    = {H. R. Narra and others},
-  title     = {Efficient Feature Extraction for {ViT} Model using Custom {CNN} Accelerator},
-  booktitle = {Proc. IEEE Int'l Conf. on High Performance Computing, Data, and Analytics Workshops (HiPCW)},
-  series    = {ROCS Workshop},
-  year      = {2024},
-  doi       = {10.1109/HiPCW63042.2024.00016},
-}`,
-    artifactNote: 'Source code available on request (hnarra@usc.edu).',
+    title:
+      "Efficient Feature Extraction for ViT Model using Custom CNN Accelerator",
+    venue: "IEEE HiPC 2024 · ROCS Workshop",
+    date: "December 2024",
+    description:
+      "Custom CNN acceleration for the feature-extraction stage of a Vision Transformer pipeline.",
+    doi: "10.1109/HiPCW63042.2024.00016",
+    link: "https://ieeexplore.ieee.org/document/10898880",
   },
 ];
-
-export const achievements = [
+export const recognition = [
   {
-    kind: 'Award',
-    title: 'First Runner-Up — DVCON India 2024 Design Contest',
-    org: 'DVCon India · Bengaluru',
-    date: 'September 2024',
-    description:
-      'Recognized for "Efficient Feature Extraction for ViT Model Using a Custom CNN Accelerator IP" — a LeNet-5–based CNN accelerator integrated with the Vega AS1061 RISC-V processor over AXI4, deployed on a Genesys 2 FPGA.',
-    accent: 'violet',
-    icon: 'Trophy',
-    link: 'https://linkedin.com/in/harsha240',
-    linkLabel: 'View on LinkedIn',
+    title: "First Runner-Up",
+    organization: "DVCon India 2024",
+    description: "Design contest · CNN accelerator · Team of 3",
+    year: "2024",
   },
   {
-    kind: 'Publication',
-    title: 'Efficient Feature Extraction for ViT Model using Custom CNN Accelerator',
-    org: 'IEEE HiPC 2024 · ROCS Workshop',
-    date: 'December 2024',
-    description:
-      'Peer-reviewed paper at the IEEE International Conference on High Performance Computing, Data, and Analytics. DOI: 10.1109/HiPCW63042.2024.00016',
-    accent: 'cyan',
-    icon: 'BookOpen',
-    link: 'https://ieeexplore.ieee.org/document/10898880',
-    linkLabel: 'Read on IEEE Xplore',
-  },
-  {
-    kind: 'Honor',
-    title: 'Ranked #1 Team — EE477 Full-Custom MAC Design',
-    org: 'University of Southern California',
-    date: 'December 2025',
-    description:
-      'Top-ranked team in the EE477 cohort for a full-custom 16-bit MAC unit (Booth + compressor tree + sparse-4 Kogge-Stone), judged on PPA, layout quality, and post-layout timing.',
-    accent: 'violet',
-    icon: 'Medal',
-    link: 'https://linkedin.com/in/harsha240',
-    linkLabel: 'View on LinkedIn',
+    title: "#1 course team",
+    organization: "USC · EE477",
+    description: "MOS VLSI Circuit Design · Full-custom MAC",
+    year: "2025",
   },
 ];
-
-export const talks = [
+export const certifications = [
   {
-    title: 'Efficient Feature Extraction for ViT Model using Custom CNN Accelerator',
-    venue: 'IEEE HiPC 2024 · ROCS Workshop',
-    location: 'Bengaluru, India',
-    date: 'Dec 2024',
-    type: 'Paper',
-    summary:
-      'Presented our peer-reviewed paper on a LeNet-5–inspired CNN accelerator integrated with a RISC-V softcore over AXI4, used as the front-end feature extractor for a Vision-Transformer malware-detection pipeline.',
-    accent: 'cyan',
-    link: 'https://ieeexplore.ieee.org/document/10898880',
-    linkLabel: 'IEEE Xplore',
+    name: "SystemVerilog for Design and Verification",
+    issuer: "Cadence · v25.03",
+    year: "Apr 2026",
+    link: "https://www.credly.com/badges/ca72d8e8-ae25-4b64-85f1-7ef5c7532ec2/linked_in_profile",
   },
   {
-    title: 'CNN Accelerator IP — Architecture, RTL, and FPGA Mapping',
-    venue: 'DVCON India 2024 · Design Contest',
-    location: 'Bengaluru, India',
-    date: 'Sep 2024',
-    type: 'Pitch',
-    award: '1st Runner-Up',
-    summary:
-      'Pitched the end-to-end design of our CNN-accelerator IP — architecture, RTL, AXI integration with the Vega AS1061 RISC-V processor, and Genesys 2 FPGA mapping — to industry judges.',
-    accent: 'violet',
-    link: 'https://linkedin.com/in/harsha240',
-    linkLabel: 'LinkedIn post',
+    name: "Essential SystemVerilog for UVM",
+    issuer: "Cadence",
+    year: "May 2026",
+  },
+  {
+    name: "Analog Circuits · Elite",
+    issuer: "NPTEL · IIT Bombay",
+    year: "2023",
+    link: "/credentials/nptel-analog-circuits.png",
+  },
+  {
+    name: "MATLAB Onramp",
+    issuer: "MathWorks",
+    year: "2023",
+    link: "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=f8c9a0f1-314f-44de-b478-b73048e61a47",
+  },
+  {
+    name: "MATLAB App Designer Onramp",
+    issuer: "MathWorks",
+    year: "2023",
+    link: "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=4d0b56ca-fa08-40f0-8c1c-d3a2691bf3f8",
   },
 ];
