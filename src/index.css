@@ -1188,8 +1188,8 @@ h4 {
 }
 .about-grid {
   display: grid;
-  grid-template-columns: 0.72fr 1fr;
-  gap: 95px;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: 72px;
   align-items: center;
 }
 .portrait-block {
