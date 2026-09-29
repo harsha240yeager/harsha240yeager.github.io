@@ -62,7 +62,7 @@ export default function Projects() {
                 </div>
                 <ProjectArtwork type={project.visual} />
                 <div className="visual-footer">
-                  <span>HDC_1024</span>
+                  <span>1024 → 128 SELECTED BITS</span>
                   <span>ZYNQ-7020 · 100 MHz</span>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function Projects() {
                   ))}
                 </div>
                 <span className="metric-context">
-                  Measured on 493,512 EMG windows · vs. ARM baseline
+                  Narrow K=128 hardware vs. masked full-width · 493,512 EMG test windows
                 </span>
                 <div className="project-bottom">
                   <div className="tag-list">

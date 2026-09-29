@@ -44,7 +44,7 @@ export default function ProjectArtwork({ type }) {
             ["BIND", "XOR"],
             ["PERMUTE", "ROT"],
             ["BUNDLE", "Σ"],
-            ["CLASSIFY", "HAM"],
+            ["128-BIT AM", "HAM"],
           ].map(([label, op], i) => (
             <g key={label} transform={`translate(${128 + i * 91} 100)`}>
               <rect
@@ -85,7 +85,7 @@ export default function ProjectArtwork({ type }) {
             fontFamily="monospace"
             letterSpacing="2"
           >
-            1024-BIT STREAMING DATAPATH
+            1024-BIT ENCODER → 128-BIT ASSOCIATIVE MEMORY
           </text>
           <text
             x="300"
@@ -94,7 +94,7 @@ export default function ProjectArtwork({ type }) {
             fontSize="10"
             fontFamily="monospace"
           >
-            DDR → DMA → FPGA → CLASSIFICATION
+            DDR → DMA → SELECTED BIT POSITIONS → CLASSIFICATION
           </text>
         </g>
       )}
@@ -348,7 +348,7 @@ export default function ProjectArtwork({ type }) {
   );
 }
 const labels = {
-  hdc: "Conceptual HDC pipeline: bind, permute, bundle, classify",
+  hdc: "Conceptual HDC pipeline from a 1024-bit encoder to a 128-bit associative memory",
   systolic: "Five by six systolic processing-element array",
   pipeline: "Five-stage RISC-V pipeline with forwarding paths",
   layout: "Conceptual full-custom MAC floorplan",

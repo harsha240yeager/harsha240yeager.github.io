@@ -65,29 +65,30 @@ export const projects = [
     number: "01",
     category: "Accelerators",
     kind: "Ongoing research · IIT Bhubaneswar",
-    title: "Brain-inspired compute. Hardware-proven.",
-    shortTitle: "Streaming HDC accelerator",
-    subtitle: "A 1024-bit hyperdimensional computing classifier on Zynq-7020.",
+    title: "Prune the bits. Shrink the hardware.",
+    shortTitle: "Bit-position-pruned HDC accelerator",
+    subtitle:
+      "A 1024-bit EMG classifier with a 128-bit associative memory on Zynq-7020.",
     description:
-      "A streaming, synthesizable SystemVerilog accelerator that takes hyperdimensional classification from a Python golden model to measured FPGA performance.",
+      "A streaming HDC classifier that tests when bit-position pruning produces real FPGA savings. A specialized 128-bit associative memory cuts hardware cost and batch latency while preserving test accuracy.",
     visual: "hdc",
     featured: true,
-    tags: ["SystemVerilog", "Zynq-7020", "AXI DMA", "Python"],
+    tags: ["SystemVerilog", "Bit pruning", "Zynq-7020", "AXI DMA"],
     metrics: [
-      { value: "~177×", label: "faster than ARM" },
-      { value: "4.63 μs", label: "latency / window" },
-      { value: "~174×", label: "energy efficiency" },
+      { value: "7.5×", label: "fewer core LUTs" },
+      { value: "2.78 μs", label: "batch latency / window" },
+      { value: "72.84%", label: "board test accuracy" },
     ],
     challenge:
-      "Run a complete hyperdimensional computing classifier efficiently on an FPGA, while keeping its outputs bit-exact with a software reference and sustaining a continuous stream of input windows.",
+      "Find out whether selecting fewer HDC bit positions actually reduces FPGA resource use and inference latency, rather than only changing the classification score on an unchanged datapath.",
     approach: [
-      "Built a 1024-bit datapath for XOR binding, permutation, bundling, and Hamming-distance / population-count classification in synthesizable SystemVerilog.",
-      "Validated hardware outputs against a Python golden model on a Zynq-7020 running at 100 MHz.",
-      "Brought up scatter-gather DMA from DDR at approximately 216k windows per second, removing processor copies from each transfer.",
+      "Built a streaming 1024-bit EMG classifier in SystemVerilog on Zynq-7020, with scatter-gather AXI DMA and AXI4-Lite-programmable bit masks.",
+      "Compared 128-bit informed masks with random masks at the same density, then hard-wired the selected positions into a physically narrow associative memory.",
+      "Checked the FPGA against a software reference and evaluated both bitstreams on the same disjoint EMG test cohort.",
     ],
     result:
-      "Measured 493,512 EMG windows: 72.78% classification accuracy, 4.63 μs and 12.0 μJ per window. The ARM baseline measured 818 μs and 2.09 mJ per window—approximately 177× faster and 174× more energy-efficient for this workload.",
-    note: "Research with Prof. Srinivas Boppu at IIT Bhubaneswar. Performance comparisons apply to the measured EMG workload and ARM baseline.",
+      "Across 493,512 EMG test windows, the 128-bit associative memory matched the masked full-width design at 72.84% pooled accuracy. Out-of-context core LUTs fell from 28,600 to 3,794, integrated LUTs from 35,206 to 10,601, and 200-window scatter-gather batch latency from 4.63 to 2.78 μs per window. A runtime mask alone did not shrink the synthesized datapath. In the Python mask study, informed 128-bit masks beat unrestricted random masks by 6.90 percentage points across 30 seeds, mostly by avoiding input-invariant bits.",
+    note: "Research with Prof. Srinivas Boppu at IIT Bhubaneswar. The encoder remains 1024-bit; selected positions feed a narrower associative memory. Latency includes the processor and DMA path, not only the FPGA core.",
     links: [
       {
         label: "View RTL repository",
