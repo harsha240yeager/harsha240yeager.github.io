@@ -301,10 +301,10 @@ export const education = [
     focus: "VLSI & Computer Architecture",
     period: "2025 — 2027 (expected)",
     coursework: [
-      "EE457 · Computer Systems Organization",
-      "EE477 · MOS VLSI Circuit Design",
-      "EE557 · Computer Systems Architecture",
-      "EE511 · Machine Learning Hardware Accelerators",
+      { code: "EE457", title: "Computer Systems Organization" },
+      { code: "EE477", title: "MOS VLSI Circuit Design" },
+      { code: "EE557", title: "Computer Systems Architecture" },
+      { code: "EE511", title: "Machine Learning Hardware Accelerators" },
     ],
   },
   {

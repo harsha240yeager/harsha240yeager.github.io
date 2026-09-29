@@ -30,6 +30,9 @@ export default function About() {
           <h2>
             A little about <span className="serif-accent">me.</span>
           </h2>
+          <p className="about-mantra">
+            Curious by nature. <em>Engineer by practice.</em>
+          </p>
           <p className="about-lead">{profile.about}</p>
           <p>{profile.philosophy}</p>
           <div id="education" className="education-list">
@@ -44,14 +47,17 @@ export default function About() {
                   <span className="education-focus">{item.focus}</span>
                 )}
                 {item.coursework.length > 0 && (
-                  <details>
-                    <summary>Selected coursework</summary>
-                    <ul>
+                  <section className="coursework" aria-label="Selected USC coursework">
+                    <h4>Selected USC coursework</h4>
+                    <ul className="coursework-list">
                       {item.coursework.map((course) => (
-                        <li key={course}>{course}</li>
+                        <li key={course.code}>
+                          <span className="coursework-code mono">{course.code}</span>
+                          <span className="coursework-title">{course.title}</span>
+                        </li>
                       ))}
                     </ul>
-                  </details>
+                  </section>
                 )}
               </article>
             ))}
